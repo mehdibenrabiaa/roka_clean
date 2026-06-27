@@ -136,8 +136,8 @@ export default function Services() {
               />
             </div>
             <div className="flex gap-2 shrink-0">
-              <CarouselPrevious className="static translate-y-0 border-[#DDE3E8] text-[#1e1e1e] hover:bg-[#60f000] hover:text-white hover:border-[#60f000]" />
-              <CarouselNext className="static translate-y-0 border-[#DDE3E8] text-[#1e1e1e] hover:bg-[#60f000] hover:text-white hover:border-[#60f000]" />
+              <CarouselPrevious className="static translate-y-0 border-[#DDE3E8] text-[#1e1e1e] hover:bg-[#216bee] hover:text-white hover:border-[#216bee]" />
+              <CarouselNext className="static translate-y-0 border-[#DDE3E8] text-[#1e1e1e] hover:bg-[#216bee] hover:text-white hover:border-[#216bee]" />
             </div>
           </div>
 

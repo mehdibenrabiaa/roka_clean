@@ -8,18 +8,18 @@
   /* Backgrounds */
   --background: #ffffff;
   --section-bg: #ffffff;
-  --section-bg-alt: #f2ffe8; /* faint green — alternating sections */
+  --section-bg-alt: #ecf2fe; /* faint blue — alternating sections */
 
   /* Text */
-  --foreground: #1e1e1e; /* dark green — main text color */
+  --foreground: #1e1e1e; /* main text color */
 
   /* Brand palette */
-  --color-primary: #60f000; /* main green  */
-  --color-primary-dk: #4ec400; /* dark green  — hover states */
-  --color-primary-lt: #b6f25a; /* light green (gradients, highlights) */
+  --color-primary: #216bee; /* main blue */
+  --color-primary-dk: #1a5fd4; /* dark blue — hover states */
+  --color-primary-lt: #93c5fd; /* light blue — accents & highlights */
   --color-navy: #1e1e1e; /* headings / dark text — mirrors --foreground */
   --color-slate: #4a82b8; /* secondary blue */
-  --color-sage: #eaf0e6; /* soft green tint */
+  --color-sage: #eaf0e6; /* soft sage tint */
   --color-gray: #dde3e8; /* borders / dividers */
 }
 

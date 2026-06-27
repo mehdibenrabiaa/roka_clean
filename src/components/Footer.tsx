@@ -5,7 +5,7 @@ const links = [
   {
     heading: "Explorer",
     items: ["Accueil", "À propos", "Services", "Témoignages", "FAQ"],
-    hrefs: ["/", "/about", "/services", "/testimonials", "/#faq"],
+    hrefs: ["/", "/about", "/services", "/testimonials", "/faq"],
   },
   {
     heading: "Nos Services",
@@ -88,7 +88,7 @@ export default function Footer() {
                 <Link
                   key={i}
                   href={href}
-                  className="w-9 h-9 rounded-full bg-primary flex items-center justify-center hover:bg-primary-dk transition-colors text-[#1e1e1e]"
+                  className="w-9 h-9 rounded-full bg-primary flex items-center justify-center hover:bg-primary-dk transition-colors text-white"
                 >
                   {svg}
                 </Link>

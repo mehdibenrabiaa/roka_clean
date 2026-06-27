@@ -14,7 +14,7 @@ export default function Newsletter() {
       {/* Background image */}
       <div className="absolute inset-0">
         <Image
-          src="/professionnelde nettoyage Roka Clean.webp"
+          src="/Rejoignez la Communauté Roka Clean.webp"
           alt=""
           fill
           className="object-cover object-center"

@@ -62,7 +62,7 @@ export default function Navbar() {
             <li key={link.href}>
               <Link
                 href={link.href}
-                className="text-sm font-medium text-[#1e1e1e] hover:text-[#60f000] transition-colors"
+                className="text-sm font-medium text-[#1e1e1e] hover:text-[#216bee] transition-colors"
               >
                 {link.label}
               </Link>
@@ -85,7 +85,7 @@ export default function Navbar() {
           <Sheet>
             <SheetTrigger asChild>
               <button
-                className="p-2 rounded-full text-[#1e1e1e] hover:text-[#60f000] transition-colors cursor-pointer"
+                className="p-2 rounded-full text-[#1e1e1e] hover:text-[#216bee] transition-colors cursor-pointer"
                 aria-label="Ouvrir le menu"
               >
                 <Menu size={22} />
@@ -112,7 +112,7 @@ export default function Navbar() {
                   <SheetClose asChild key={link.href}>
                     <Link
                       href={link.href}
-                      className="text-base font-medium text-[#1e1e1e] hover:text-[#60f000] transition-colors px-2 py-3 mr-4 rounded-none hover:bg-[#EAF0E6] border-b border-[#DDE3E8]"
+                      className="text-base font-medium text-[#1e1e1e] hover:text-[#216bee] transition-colors px-2 py-3 mr-4 rounded-none hover:bg-[#EAF0E6] border-b border-[#DDE3E8]"
                     >
                       {link.label}
                     </Link>

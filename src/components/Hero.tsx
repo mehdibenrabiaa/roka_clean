@@ -21,7 +21,7 @@ export default function Hero() {
       {/* Desktop background image */}
       <div className="hidden md:block absolute inset-0">
         <Image
-          src="/hero-bg-large.png"
+          src="/hero-bg-large.webp"
           alt=""
           fill
           className="object-cover object-right"
