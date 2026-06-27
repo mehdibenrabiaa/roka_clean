@@ -30,7 +30,7 @@ export default function Newsletter() {
             Rejoignez la Communauté Roka Clean
           </h2>
 
-          <p className="text-sm text-[#1e1e1e]/60 mb-6">
+          <p className="text-sm text-[#1e1e1e]/75 mb-6">
             Recevez nos offres exclusives et actualités directement dans votre boîte mail.
           </p>
 
@@ -45,16 +45,16 @@ export default function Newsletter() {
               onChange={(e) => setEmail(e.target.value)}
               placeholder="Entrez votre email"
               required
-              className="flex-1 border border-[#DDE3E8] rounded-full px-4 py-2.5 text-sm text-[#1e1e1e] bg-white placeholder:text-[#1e1e1e]/40 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+              className="flex-1 border border-[#DDE3E8] rounded-full px-4 py-2.5 text-sm text-[#1e1e1e] bg-white placeholder:text-[#1e1e1e]/60 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
             />
             <Button type="submit" className="rounded-full px-6 font-bold w-full sm:w-auto">
               S'abonner
             </Button>
           </form>
 
-          <p className="mt-4 text-xs text-[#1e1e1e]/50">
+          <p className="mt-4 text-xs text-[#1e1e1e]/75">
             En vous abonnant, vous acceptez notre{" "}
-            <Link href="/privacy" className="underline hover:text-primary transition-colors">
+            <Link href="/confidentialite" className="underline hover:text-primary transition-colors">
               Politique de confidentialité
             </Link>
             .

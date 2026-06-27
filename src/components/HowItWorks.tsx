@@ -59,7 +59,7 @@ export default function HowItWorks() {
             {/* Floating satisfaction badge */}
             <div className="absolute bottom-5 left-5 bg-white rounded-2xl px-5 py-4 shadow-lg">
               <p className="text-3xl font-bold text-[#1e1e1e]">98%</p>
-              <p className="text-xs text-[#1e1e1e]/60 mt-0.5">Clients Satisfaits</p>
+              <p className="text-xs text-[#1e1e1e]/75 mt-0.5">Clients Satisfaits</p>
             </div>
           </div>
 
@@ -67,7 +67,7 @@ export default function HowItWorks() {
           <div className="flex-1 flex flex-col gap-4">
             {steps.map((step) => (
               <div key={step.number} className="bg-white rounded-2xl px-6 py-5 shadow-sm">
-                <p className="text-sm font-semibold text-[#1e1e1e]/50 mb-1">{step.number}</p>
+                <p className="text-sm font-semibold text-[#1e1e1e]/75 mb-1">{step.number}</p>
                 <h3 className="text-lg font-bold text-[#1e1e1e] mb-2">{step.title}</h3>
                 <p className="text-sm text-[#1e1e1e]/70 leading-relaxed">{step.description}</p>
                 {step.cta && (

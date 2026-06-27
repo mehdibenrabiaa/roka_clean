@@ -72,7 +72,7 @@ function StatCounter({ end, suffix, label, decimal }: typeof stats[0]) {
       <p className="text-3xl md:text-4xl font-bold text-[#1e1e1e]">
         {decimal ? count.toFixed(1) : Math.floor(count)}{suffix}
       </p>
-      <p className="text-sm text-[#1e1e1e]/60 mt-1">{label}</p>
+      <p className="text-sm text-[#1e1e1e]/75 mt-1">{label}</p>
     </div>
   )
 }
@@ -82,15 +82,18 @@ export default function AboutPage() {
     <main className="flex flex-col flex-1">
 
       {/* Hero banner */}
-      <section className="bg-section-alt pt-36 pb-16 md:pt-40 md:pb-20">
-        <div className="max-w-3xl mx-auto px-4 md:px-6 text-center">
-          <span className="inline-block text-xs font-semibold text-primary bg-primary/10 rounded-full px-4 py-1.5 mb-4">
+      <section className="relative pt-36 pb-16 md:pt-40 md:pb-20 overflow-hidden">
+        <div className="absolute inset-0">
+          <Image src="/about_header_bg.webp" alt="" fill className="object-cover object-center" priority />
+        </div>
+        <div className="relative z-10 max-w-3xl mx-auto px-4 md:px-6 text-center">
+          <span className="inline-block text-xs font-semibold text-white bg-white/20 rounded-full px-4 py-1.5 mb-4">
             Notre histoire
           </span>
-          <h1 className="text-3xl md:text-5xl font-bold text-[#1e1e1e] leading-tight mb-4">
+          <h1 className="text-3xl md:text-5xl font-bold text-white leading-tight mb-4">
             Là où la Qualité Rencontre le Vrai Soin
           </h1>
-          <p className="text-sm md:text-base text-[#1e1e1e]/60 max-w-md mx-auto">
+          <p className="text-sm md:text-base text-white/80 max-w-2xl mx-auto">
             Chez Roka Clean, nous croyons qu'une maison propre inspire un esprit clair. Découvrez qui nous sommes et ce qui nous anime.
           </p>
         </div>
@@ -105,28 +108,11 @@ export default function AboutPage() {
             <div className="flex-1 relative w-full">
               <div className="relative rounded-2xl overflow-hidden h-[360px] md:h-[460px] w-full bg-[#DDE3E8]">
                 <Image
-                  src="/professionnelde nettoyage Roka Clean.webp"
+                  src="/about-us-01.webp"
                   alt="Équipe Roka Clean"
                   fill
                   className="object-cover"
                 />
-              </div>
-              {/* Floating badge */}
-              <div className="absolute bottom-5 left-4 md:-left-6 bg-white rounded-2xl px-5 py-4 shadow-lg">
-                <p className="text-xs font-semibold text-[#1e1e1e] mb-3">Approuvé par nos clients</p>
-                <div className="flex items-center gap-3">
-                  <div className="flex -space-x-2">
-                    {[1, 2, 3, 4].map((i) => (
-                      <div key={i} className="relative w-8 h-8 rounded-full border-2 border-white overflow-hidden">
-                        <Image src={`/profile_pic_${i}.webp`} alt={`Client ${i}`} fill className="object-cover" />
-                      </div>
-                    ))}
-                  </div>
-                  <div>
-                    <p className="text-sm font-bold text-[#1e1e1e]">1000+</p>
-                    <p className="text-xs text-[#1e1e1e]/60">Clients Satisfaits</p>
-                  </div>
-                </div>
               </div>
             </div>
 
@@ -167,7 +153,7 @@ export default function AboutPage() {
         <div className="max-w-6xl mx-auto px-4 md:px-6">
           <div className="text-center mb-12">
             <h2 className="text-2xl md:text-4xl font-bold text-[#1e1e1e] mb-3">Nos Valeurs</h2>
-            <p className="text-sm md:text-base text-[#1e1e1e]/60 max-w-md mx-auto">
+            <p className="text-sm md:text-base text-[#1e1e1e]/75 max-w-md mx-auto">
               Ce qui nous guide au quotidien dans chaque intervention.
             </p>
           </div>
@@ -188,7 +174,7 @@ export default function AboutPage() {
         <div className="max-w-6xl mx-auto px-4 md:px-6">
           <div className="text-center mb-12">
             <h2 className="text-2xl md:text-4xl font-bold text-[#1e1e1e] mb-3">Notre Équipe</h2>
-            <p className="text-sm md:text-base text-[#1e1e1e]/60 max-w-md mx-auto">
+            <p className="text-sm md:text-base text-[#1e1e1e]/75 max-w-md mx-auto">
               Des professionnels passionnés qui font la différence chaque jour.
             </p>
           </div>
@@ -199,7 +185,7 @@ export default function AboutPage() {
                   <Image src={member.image} alt={member.name} fill className="object-cover" />
                 </div>
                 <p className="font-bold text-[#1e1e1e] text-sm md:text-base">{member.name}</p>
-                <p className="text-xs text-[#1e1e1e]/60 mt-1">{member.role}</p>
+                <p className="text-xs text-[#1e1e1e]/75 mt-1">{member.role}</p>
               </div>
             ))}
           </div>
@@ -212,7 +198,7 @@ export default function AboutPage() {
           <h2 className="text-2xl md:text-3xl font-bold text-[#1e1e1e] mb-3">
             Prêt à découvrir la différence Roka Clean ?
           </h2>
-          <p className="text-sm text-[#1e1e1e]/60 mb-8">
+          <p className="text-sm text-[#1e1e1e]/75 mb-8">
             Rejoignez nos milliers de clients satisfaits et réservez votre première intervention dès aujourd'hui.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">

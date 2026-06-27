@@ -166,7 +166,7 @@ export default function FAQPage() {
           <h2 className="text-2xl md:text-3xl font-bold text-[#1e1e1e] mb-3">
             Vous avez encore des questions ?
           </h2>
-          <p className="text-sm text-[#1e1e1e]/60 mb-8">
+          <p className="text-sm text-[#1e1e1e]/75 mb-8">
             Notre équipe est disponible pour vous répondre du lundi au samedi, de 8h à 19h.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">

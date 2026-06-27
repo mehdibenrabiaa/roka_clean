@@ -1,11 +1,12 @@
 import Link from "next/link"
 import Image from "next/image"
+import { MapPin, Phone, Mail } from "lucide-react"
 
 const links = [
   {
     heading: "Explorer",
     items: ["Accueil", "À propos", "Services", "Témoignages", "FAQ"],
-    hrefs: ["/", "/about", "/services", "/testimonials", "/faq"],
+    hrefs: ["/", "/a-propos", "/services", "/temoignages", "/faq"],
   },
   {
     heading: "Nos Services",
@@ -19,13 +20,13 @@ const links = [
   },
   {
     heading: "Ressources",
-    items: ["Blog", "Études de cas", "Support", "Politique de confidentialité", "Conditions d'utilisation"],
-    hrefs: ["/blog", "/case-studies", "/support", "/privacy", "/terms"],
+    items: ["Blog", "Support", "Politique de confidentialité", "Conditions d'utilisation"],
+    hrefs: ["/blog", "/support", "/confidentialite", "/conditions"],
   },
   {
     heading: "Entreprise",
-    items: ["À propos", "Notre équipe", "Carrières", "Contactez-nous"],
-    hrefs: ["/about", "/team", "/careers", "/contact"],
+    items: ["À propos", "Notre équipe", "Contactez-nous"],
+    hrefs: ["/a-propos", "/equipe", "/contact"],
   },
 ]
 
@@ -80,7 +81,7 @@ export default function Footer() {
             <Link href="/">
               <Image src="/logo.svg" alt="Roka Clean" width={200} height={55} className="object-contain" />
             </Link>
-            <p className="text-sm text-[#1e1e1e]/60 leading-relaxed max-w-[200px]">
+            <p className="text-sm text-[#1e1e1e]/75 leading-relaxed max-w-[200px]">
               Un espace propre, un esprit serein — à chaque intervention.
             </p>
             <div className="flex gap-3">
@@ -105,7 +106,7 @@ export default function Footer() {
                   <li key={item}>
                     <Link
                       href={col.hrefs[i]}
-                      className="text-sm text-[#1e1e1e]/60 hover:text-primary transition-colors"
+                      className="text-sm text-[#1e1e1e]/75 hover:text-primary transition-colors"
                     >
                       {item}
                     </Link>
@@ -118,10 +119,22 @@ export default function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="mt-12 pt-6 border-t border-[#DDE3E8] flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-[#1e1e1e]/50">
-          <span>© 2025 Roka Clean. Tous droits réservés.</span>
-          <Link href="/privacy" className="hover:text-primary transition-colors">Politique de confidentialité</Link>
-          <Link href="/terms" className="hover:text-primary transition-colors">Conditions d'utilisation</Link>
+        <div className="mt-12 pt-6 border-t border-[#DDE3E8] flex flex-col md:flex-row items-center justify-between gap-4">
+          <span className="text-sm text-[#1e1e1e]/75">© 2026 Roka Clean. Tous droits réservés.</span>
+          <div className="flex flex-col sm:flex-row items-center gap-4 text-sm text-[#1e1e1e]/75">
+            <span className="flex items-center gap-2">
+              <MapPin size={14} className="text-primary shrink-0" />
+              12 Rue de la Propreté, 75001 Paris, France
+            </span>
+            <Link href="tel:+33100000000" className="flex items-center gap-2 hover:text-primary transition-colors">
+              <Phone size={14} className="text-primary shrink-0" />
+              +33 1 00 00 00 00
+            </Link>
+            <Link href="mailto:contact@rokaclean.fr" className="flex items-center gap-2 hover:text-primary transition-colors">
+              <Mail size={14} className="text-primary shrink-0" />
+              contact@rokaclean.fr
+            </Link>
+          </div>
         </div>
 
       </div>

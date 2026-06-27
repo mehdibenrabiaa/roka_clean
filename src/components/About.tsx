@@ -58,7 +58,7 @@ function StatCounter({ end, suffix, label, decimal }: typeof stats[0]) {
       <p className="text-3xl md:text-4xl font-bold text-[#1e1e1e]">
         {decimal ? count.toFixed(1) : Math.floor(count)}{suffix}
       </p>
-      <p className="text-sm text-[#1e1e1e]/60 mt-1">{label}</p>
+      <p className="text-sm text-[#1e1e1e]/75 mt-1">{label}</p>
     </div>
   )
 }
@@ -74,7 +74,7 @@ export default function About() {
           {/* Left — text content */}
           <div className="flex-1">
             <Link
-              href="/about"
+              href="/a-propos"
               className="inline-flex items-center gap-1 text-sm font-medium text-primary hover:underline mb-5"
             >
               À propos <ArrowRight size={14} />
@@ -129,7 +129,7 @@ export default function About() {
                 </div>
                 <div>
                   <p className="text-sm font-bold text-[#1e1e1e]">1000+</p>
-                  <p className="text-xs text-[#1e1e1e]/60">Clients Satisfaits</p>
+                  <p className="text-xs text-[#1e1e1e]/75">Clients Satisfaits</p>
                 </div>
               </div>
             </div>

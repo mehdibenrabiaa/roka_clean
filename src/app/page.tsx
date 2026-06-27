@@ -1,4 +1,5 @@
 import Hero from "@/components/Hero"
+import QuoteForm from "@/components/QuoteForm"
 import About from "@/components/About"
 import Services from "@/components/Services"
 import HowItWorks from "@/components/HowItWorks"
@@ -9,6 +10,7 @@ export default function Home() {
   return (
     <main className="flex flex-col flex-1">
       <Hero />
+      <QuoteForm />
       <About />
       <Services />
       <HowItWorks />

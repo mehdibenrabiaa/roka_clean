@@ -43,7 +43,7 @@
 }
 
 body {
-  background: var(--background);
+  background: var(--section-bg-alt);
   color: var(--foreground);
   font-family: var(--font-plus-jakarta-sans), sans-serif;
 }

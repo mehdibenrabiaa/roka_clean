@@ -1,11 +1,10 @@
 "use client"
 
 import Image from "next/image"
-import { Button } from "@/components/ui/button"
 
 export default function Hero() {
   return (
-    <section className="relative w-full min-h-[600px] md:min-h-[700px] flex items-center">
+    <section className="relative w-full min-h-[500px] md:min-h-[700px] flex items-center pb-16 md:pb-32">
 
       {/* Mobile background image */}
       <div className="md:hidden absolute inset-0">
@@ -33,28 +32,15 @@ export default function Hero() {
       <div className="absolute inset-0 bg-black/20" />
 
       {/* Content */}
-      <div className="relative z-10 w-full max-w-6xl mx-auto px-6 py-16 flex justify-start">
+      <div className="relative z-10 w-full max-w-6xl mx-auto px-6 pt-28 pb-16 md:py-16 flex justify-start">
 
         {/* Left card */}
-        <div className="w-full max-w-[480px] rounded-2xl p-8 md:p-10 bg-white">
-          <h1 className="text-2xl md:text-[28px] font-bold text-[#1e1e1e] leading-snug mb-4">
-            Le Nettoyage le Plus Abordable du Marché — Vérifiez si Nous Sommes Dans Votre Région !
+        <div className="w-full max-w-[720px]">
+          <h1 className="text-[34px] md:text-[60px] font-bold text-[#1e1e1e] leading-tight">
+            <span className="bg-white px-2 py-0.5 box-decoration-clone">
+              Un Espace Propre.<br className="md:hidden" /> Un Esprit Serein.<br className="md:hidden" /> Réservez en 2 Minutes.
+            </span>
           </h1>
-
-          <p className="text-sm text-[#1e1e1e]/70 mb-6">
-            Sélectionnez votre région pour voir s&apos;il reste encore des nettoyages à prix réduit dans votre zone
-          </p>
-
-          <div className="flex gap-2">
-            <input
-              type="text"
-              placeholder="Entrez votre ville ou code postal"
-              className="flex-1 border border-[#DDE3E8] rounded-full px-4 py-2 text-sm text-[#1e1e1e] bg-white placeholder:text-[#1e1e1e]/40 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
-            />
-            <Button className="rounded-full px-6 cursor-pointer">
-              Voir
-            </Button>
-          </div>
         </div>
 
       </div>
