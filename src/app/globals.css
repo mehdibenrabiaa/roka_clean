@@ -1,0 +1,46 @@
+@import "tailwindcss";
+@plugin "tailwindcss-animate";
+
+:root {
+  --background: #ffffff;
+  --foreground: #1E3A5F;
+
+  --color-navy:     #1E3A5F;
+  --color-slate:    #4A82B8;
+  --color-green:    #6FA32E;
+  --color-sage:     #EAF0E6;
+  --color-gray:     #DDE3E8;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-plus-jakarta-sans);
+
+  --color-navy:  #1E3A5F;
+  --color-slate: #4A82B8;
+  --color-green: #6FA32E;
+  --color-sage:  #EAF0E6;
+  --color-gray:  #DDE3E8;
+}
+
+body {
+  background: #ffffff;
+  color: var(--foreground);
+  font-family: var(--font-plus-jakarta-sans), sans-serif;
+}
+
+@keyframes page-enter {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.page-transition {
+  animation: page-enter 0.35s ease-out both;
+}
