@@ -117,7 +117,7 @@ export default function About() {
             </div>
 
             {/* Floating trust badge */}
-            <div className="absolute bottom-5 -left-14 bg-white rounded-2xl px-5 py-4 shadow-lg">
+            <div className="absolute bottom-5 left-4 md:-left-14 bg-white rounded-2xl px-5 py-4 shadow-lg">
               <p className="text-xs font-semibold text-[#1E3A5F] mb-3">Approuvé par nos clients</p>
               <div className="flex items-center gap-3">
                 <div className="flex -space-x-2">

@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import Image from "next/image"
-import { Menu } from "lucide-react"
+import { Menu, Phone } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import {
   Sheet,
@@ -55,8 +55,13 @@ export default function Navbar() {
           Contactez-nous
         </Button>
 
-        {/* Mobile — Sheet drawer */}
-        <div className="md:hidden">
+        {/* Mobile — phone CTA + hamburger */}
+        <div className="md:hidden flex items-center gap-2">
+          <Button className="rounded-full px-5 h-9 flex items-center gap-2" size="sm">
+            <Phone size={14} />
+            <span className="text-sm font-semibold">Appeler</span>
+          </Button>
+
           <Sheet>
             <SheetTrigger asChild>
               <button
@@ -75,8 +80,8 @@ export default function Navbar() {
                 <Image
                   src="/logo.svg"
                   alt="Roka Clean"
-                  width={120}
-                  height={32}
+                  width={200}
+                  height={55}
                   className="object-contain"
                 />
               </div>
@@ -87,7 +92,7 @@ export default function Navbar() {
                   <SheetClose asChild key={link.href}>
                     <Link
                       href={link.href}
-                      className="text-base font-medium text-[#1E3A5F] hover:text-[#216bee] transition-colors px-2 py-3 rounded-lg hover:bg-[#EAF0E6]"
+                      className="text-base font-medium text-[#1E3A5F] hover:text-[#216bee] transition-colors px-2 py-3 mr-4 rounded-none hover:bg-[#EAF0E6] border-b border-[#DDE3E8]"
                     >
                       {link.label}
                     </Link>
@@ -106,6 +111,7 @@ export default function Navbar() {
         </div>
 
       </nav>
+
     </header>
   )
 }
