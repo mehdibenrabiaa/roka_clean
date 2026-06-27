@@ -42,7 +42,7 @@ export default function Navbar() {
             <li key={link.href}>
               <Link
                 href={link.href}
-                className="text-sm font-medium text-[#1E3A5F] hover:text-[#4A82B8] transition-colors"
+                className="text-sm font-medium text-[#1E3A5F] hover:text-[#216bee] transition-colors"
               >
                 {link.label}
               </Link>
@@ -60,14 +60,14 @@ export default function Navbar() {
           <Sheet>
             <SheetTrigger asChild>
               <button
-                className="p-2 rounded-full text-[#1E3A5F] hover:text-[#4A82B8] transition-colors cursor-pointer"
+                className="p-2 rounded-full text-[#1E3A5F] hover:text-[#216bee] transition-colors cursor-pointer"
                 aria-label="Ouvrir le menu"
               >
                 <Menu size={22} />
               </button>
             </SheetTrigger>
 
-            <SheetContent side="left" className="w-[280px] flex flex-col pt-10">
+            <SheetContent side="left" className="w-full flex flex-col pt-10">
               <SheetTitle className="sr-only">Menu</SheetTitle>
 
               {/* Logo inside drawer */}
@@ -87,7 +87,7 @@ export default function Navbar() {
                   <SheetClose asChild key={link.href}>
                     <Link
                       href={link.href}
-                      className="text-base font-medium text-[#1E3A5F] hover:text-[#4A82B8] transition-colors px-2 py-3 rounded-lg hover:bg-[#EAF0E6]"
+                      className="text-base font-medium text-[#1E3A5F] hover:text-[#216bee] transition-colors px-2 py-3 rounded-lg hover:bg-[#EAF0E6]"
                     >
                       {link.label}
                     </Link>

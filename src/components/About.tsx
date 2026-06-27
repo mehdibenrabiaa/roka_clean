@@ -1,3 +1,6 @@
+"use client"
+
+import { useEffect, useRef, useState } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { Check, ArrowRight } from "lucide-react"
@@ -10,15 +13,59 @@ const bullets = [
 ]
 
 const stats = [
-  { value: "10K+",  label: "Clients Ravis" },
-  { value: "100K",  label: "Heures de Nettoyage" },
-  { value: "4.9/5", label: "Note Moyenne" },
-  { value: "15ans", label: "Expérience" },
+  { end: 10,  suffix: "K+",  label: "Clients Ravis" },
+  { end: 100, suffix: "K",   label: "Heures de Nettoyage" },
+  { end: 4.9, suffix: "/5",  label: "Note Moyenne", decimal: true },
+  { end: 15,  suffix: "ans", label: "Expérience" },
 ]
+
+function StatCounter({ end, suffix, label, decimal }: typeof stats[0]) {
+  const [count, setCount] = useState(0)
+  const ref = useRef<HTMLDivElement>(null)
+  const started = useRef(false)
+
+  useEffect(() => {
+    const el = ref.current
+    if (!el) return
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !started.current) {
+          started.current = true
+          const duration = 1800
+          const steps = 60
+          const interval = duration / steps
+          let step = 0
+
+          const timer = setInterval(() => {
+            step++
+            const progress = step / steps
+            const eased = 1 - Math.pow(1 - progress, 3)
+            setCount(parseFloat((eased * end).toFixed(decimal ? 1 : 0)))
+            if (step >= steps) clearInterval(timer)
+          }, interval)
+        }
+      },
+      { threshold: 0.4 }
+    )
+
+    observer.observe(el)
+    return () => observer.disconnect()
+  }, [end, decimal])
+
+  return (
+    <div ref={ref} className="text-center">
+      <p className="text-3xl md:text-4xl font-bold text-[#1E3A5F]">
+        {decimal ? count.toFixed(1) : Math.floor(count)}{suffix}
+      </p>
+      <p className="text-sm text-[#1E3A5F]/60 mt-1">{label}</p>
+    </div>
+  )
+}
 
 export default function About() {
   return (
-    <section className="bg-white py-16 md:py-24">
+    <section className="bg-[#f9fbff] py-16 md:py-24">
       <div className="max-w-6xl mx-auto px-6">
 
         {/* Two-column layout */}
@@ -28,7 +75,7 @@ export default function About() {
           <div className="flex-1">
             <Link
               href="/about"
-              className="inline-flex items-center gap-1 text-sm font-medium text-[#4A82B8] hover:underline mb-5"
+              className="inline-flex items-center gap-1 text-sm font-medium text-[#216bee] hover:underline mb-5"
             >
               À propos <ArrowRight size={14} />
             </Link>
@@ -45,7 +92,7 @@ export default function About() {
             <ul className="space-y-4 mb-8">
               {bullets.map((b) => (
                 <li key={b} className="flex items-start gap-3">
-                  <span className="mt-0.5 flex-shrink-0 w-5 h-5 rounded-full bg-[#6FA32E] flex items-center justify-center">
+                  <span className="mt-0.5 flex-shrink-0 w-5 h-5 rounded-full bg-[#199302] flex items-center justify-center">
                     <Check size={11} className="text-white" strokeWidth={3} />
                   </span>
                   <span className="text-sm text-[#1E3A5F]">{b}</span>
@@ -62,7 +109,7 @@ export default function About() {
           <div className="flex-1 relative w-full">
             <div className="relative rounded-2xl overflow-hidden h-[380px] md:h-[460px] w-full bg-[#DDE3E8]">
               <Image
-                src="/about-cleaner.jpg"
+                src="/professionnelde nettoyage Roka Clean.webp"
                 alt="Professionnel de nettoyage Roka Clean"
                 fill
                 className="object-cover"
@@ -70,16 +117,14 @@ export default function About() {
             </div>
 
             {/* Floating trust badge */}
-            <div className="absolute bottom-5 right-5 bg-white rounded-2xl px-5 py-4 shadow-lg">
+            <div className="absolute bottom-5 -left-14 bg-white rounded-2xl px-5 py-4 shadow-lg">
               <p className="text-xs font-semibold text-[#1E3A5F] mb-3">Approuvé par nos clients</p>
               <div className="flex items-center gap-3">
-                {/* Avatar stack */}
                 <div className="flex -space-x-2">
-                  {[...Array(4)].map((_, i) => (
-                    <div
-                      key={i}
-                      className="w-8 h-8 rounded-full border-2 border-white bg-[#4A82B8]/20"
-                    />
+                  {[1, 2, 3, 4].map((i) => (
+                    <div key={i} className="relative w-8 h-8 rounded-full border-2 border-white overflow-hidden">
+                      <Image src={`/profile_pic_${i}.webp`} alt={`Client ${i}`} fill className="object-cover" />
+                    </div>
                   ))}
                 </div>
                 <div>
@@ -91,13 +136,10 @@ export default function About() {
           </div>
         </div>
 
-        {/* Stats bar */}
+        {/* Animated stats bar */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 border-t border-[#DDE3E8] mt-16 pt-12">
           {stats.map((s) => (
-            <div key={s.label} className="text-center">
-              <p className="text-3xl md:text-4xl font-bold text-[#1E3A5F]">{s.value}</p>
-              <p className="text-sm text-[#1E3A5F]/60 mt-1">{s.label}</p>
-            </div>
+            <StatCounter key={s.label} {...s} />
           ))}
         </div>
 

@@ -13,29 +13,24 @@ import {
 
 const services = [
   {
-    title: "Nettoyage à Domicile",
-    description: "Gardez vos pièces impeccables grâce à un nettoyage régulier, soigneux et organisé.",
-    image: "/services/home-cleaning.jpg",
-  },
-  {
     title: "Nettoyage de Bureau",
     description: "Maintenez votre espace de travail propre et sain pour une productivité optimale.",
-    image: "/services/office-cleaning.jpg",
+    image: "/office_cleaning.webp",
   },
   {
     title: "Nettoyage en Profondeur",
     description: "Un nettoyage intensif des cuisines, salles de bains et zones difficiles d'accès.",
-    image: "/services/deep-cleaning.jpg",
+    image: "/deep cleaning.webp",
   },
   {
     title: "Nettoyage après Travaux",
     description: "Elimination complète des poussières et résidus après rénovation ou construction.",
-    image: "/services/post-construction.jpg",
+    image: "/Post-renovation cleaning.webp",
   },
   {
     title: "Nettoyage de Vitres",
     description: "Des vitres cristallines à l'intérieur comme à l'extérieur, en toute sécurité.",
-    image: "/services/window-cleaning.jpg",
+    image: "/glass cleaning.webp",
   },
 ]
 
@@ -97,8 +92,8 @@ export default function Services() {
 
           {/* Navigation arrows */}
           <div className="flex justify-end gap-2 mt-10">
-            <CarouselPrevious className="static translate-y-0 border-[#DDE3E8] text-[#1E3A5F] hover:bg-[#4A82B8] hover:text-white hover:border-[#4A82B8]" />
-            <CarouselNext className="static translate-y-0 border-[#DDE3E8] text-[#1E3A5F] hover:bg-[#4A82B8] hover:text-white hover:border-[#4A82B8]" />
+            <CarouselPrevious className="static translate-y-0 border-[#DDE3E8] text-[#1E3A5F] hover:bg-[#216bee] hover:text-white hover:border-[#216bee]" />
+            <CarouselNext className="static translate-y-0 border-[#DDE3E8] text-[#1E3A5F] hover:bg-[#216bee] hover:text-white hover:border-[#216bee]" />
           </div>
 
         </Carousel>

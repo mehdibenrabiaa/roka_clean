@@ -30,7 +30,7 @@ export default function Hero() {
       </div>
 
       {/* Dark overlay for readability */}
-      <div className="absolute inset-0 bg-black/10" />
+      <div className="absolute inset-0 bg-black/20" />
 
       {/* Content */}
       <div className="relative z-10 w-full max-w-6xl mx-auto px-6 py-16 flex justify-start">
@@ -49,7 +49,7 @@ export default function Hero() {
             <input
               type="text"
               placeholder="Entrez votre ville ou code postal"
-              className="flex-1 border border-[#DDE3E8] rounded-full px-4 py-2 text-sm text-[#1E3A5F] bg-white placeholder:text-[#1E3A5F]/40 focus:outline-none focus:ring-2 focus:ring-[#4A82B8] focus:border-transparent"
+              className="flex-1 border border-[#DDE3E8] rounded-full px-4 py-2 text-sm text-[#1E3A5F] bg-white placeholder:text-[#1E3A5F]/40 focus:outline-none focus:ring-2 focus:ring-[#216bee] focus:border-transparent"
             />
             <Button className="rounded-full px-6 cursor-pointer">
               Voir
