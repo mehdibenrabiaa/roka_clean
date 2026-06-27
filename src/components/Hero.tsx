@@ -21,7 +21,7 @@ export default function Hero() {
       {/* Desktop background image */}
       <div className="hidden md:block absolute inset-0">
         <Image
-          src="/hero-bg-large.webp"
+          src="/hero-bg-large.png"
           alt=""
           fill
           className="object-cover object-right"
@@ -37,11 +37,11 @@ export default function Hero() {
 
         {/* Left card */}
         <div className="w-full max-w-[480px] rounded-2xl p-8 md:p-10 bg-white">
-          <h1 className="text-2xl md:text-[28px] font-bold text-[#1E3A5F] leading-snug mb-4">
+          <h1 className="text-2xl md:text-[28px] font-bold text-[#1e1e1e] leading-snug mb-4">
             Le Nettoyage le Plus Abordable du Marché — Vérifiez si Nous Sommes Dans Votre Région !
           </h1>
 
-          <p className="text-sm text-[#1E3A5F]/70 mb-6">
+          <p className="text-sm text-[#1e1e1e]/70 mb-6">
             Sélectionnez votre région pour voir s&apos;il reste encore des nettoyages à prix réduit dans votre zone
           </p>
 
@@ -49,7 +49,7 @@ export default function Hero() {
             <input
               type="text"
               placeholder="Entrez votre ville ou code postal"
-              className="flex-1 border border-[#DDE3E8] rounded-full px-4 py-2 text-sm text-[#1E3A5F] bg-white placeholder:text-[#1E3A5F]/40 focus:outline-none focus:ring-2 focus:ring-[#216bee] focus:border-transparent"
+              className="flex-1 border border-[#DDE3E8] rounded-full px-4 py-2 text-sm text-[#1e1e1e] bg-white placeholder:text-[#1e1e1e]/40 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
             />
             <Button className="rounded-full px-6 cursor-pointer">
               Voir

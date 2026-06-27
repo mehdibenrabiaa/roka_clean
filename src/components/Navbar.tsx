@@ -11,6 +11,7 @@ import {
   SheetClose,
   SheetTitle,
 } from "@/components/ui/sheet"
+import { useEffect, useRef, useState } from "react"
 
 const navLinks = [
   { label: "Accueil", href: "/" },
@@ -20,8 +21,27 @@ const navLinks = [
 ]
 
 export default function Navbar() {
+  const [visible, setVisible] = useState(true)
+  const lastScrollY = useRef(0)
+
+  useEffect(() => {
+    const onScroll = () => {
+      const current = window.scrollY
+      setVisible(current < lastScrollY.current || current < 10)
+      lastScrollY.current = current
+    }
+    window.addEventListener("scroll", onScroll, { passive: true })
+    return () => window.removeEventListener("scroll", onScroll)
+  }, [])
+
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 w-full px-4 py-4 flex flex-col items-center">
+    <header
+      className={[
+        "fixed top-0 left-0 right-0 z-50 w-full px-4 py-4 flex flex-col items-center",
+        "md:transition-transform md:duration-300",
+        visible ? "md:translate-y-0" : "md:-translate-y-full",
+      ].join(" ")}
+    >
       <nav className="w-full max-w-6xl bg-white rounded-full px-[6px] py-3 md:py-[5px] flex items-center justify-between shadow-md">
 
         {/* Logo */}
@@ -42,7 +62,7 @@ export default function Navbar() {
             <li key={link.href}>
               <Link
                 href={link.href}
-                className="text-sm font-medium text-[#1E3A5F] hover:text-[#216bee] transition-colors"
+                className="text-sm font-medium text-[#1e1e1e] hover:text-[#60f000] transition-colors"
               >
                 {link.label}
               </Link>
@@ -65,7 +85,7 @@ export default function Navbar() {
           <Sheet>
             <SheetTrigger asChild>
               <button
-                className="p-2 rounded-full text-[#1E3A5F] hover:text-[#216bee] transition-colors cursor-pointer"
+                className="p-2 rounded-full text-[#1e1e1e] hover:text-[#60f000] transition-colors cursor-pointer"
                 aria-label="Ouvrir le menu"
               >
                 <Menu size={22} />
@@ -92,7 +112,7 @@ export default function Navbar() {
                   <SheetClose asChild key={link.href}>
                     <Link
                       href={link.href}
-                      className="text-base font-medium text-[#1E3A5F] hover:text-[#216bee] transition-colors px-2 py-3 mr-4 rounded-none hover:bg-[#EAF0E6] border-b border-[#DDE3E8]"
+                      className="text-base font-medium text-[#1e1e1e] hover:text-[#60f000] transition-colors px-2 py-3 mr-4 rounded-none hover:bg-[#EAF0E6] border-b border-[#DDE3E8]"
                     >
                       {link.label}
                     </Link>

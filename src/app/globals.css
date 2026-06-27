@@ -1,33 +1,68 @@
 @import "tailwindcss";
 @plugin "tailwindcss-animate";
 
+/* ─── Brand tokens ─────────────────────────────────────────────────────────
+   Change values here — every component updates automatically.
+   ──────────────────────────────────────────────────────────────────────── */
 :root {
+  /* Backgrounds */
   --background: #ffffff;
-  --foreground: #1E3A5F;
+  --section-bg: #ffffff;
+  --section-bg-alt: #f2ffe8; /* faint green — alternating sections */
 
-  --color-navy:     #9cee21;
-  --color-slate:    #4A82B8;
-  --color-green:    #6FA32E;
-  --color-sage:     #EAF0E6;
-  --color-gray:     #DDE3E8;
+  /* Text */
+  --foreground: #1e1e1e; /* dark green — main text color */
+
+  /* Brand palette */
+  --color-primary: #60f000; /* main green  */
+  --color-primary-dk: #4ec400; /* dark green  — hover states */
+  --color-primary-lt: #b6f25a; /* light green (gradients, highlights) */
+  --color-navy: #1e1e1e; /* headings / dark text — mirrors --foreground */
+  --color-slate: #4a82b8; /* secondary blue */
+  --color-sage: #eaf0e6; /* soft green tint */
+  --color-gray: #dde3e8; /* borders / dividers */
 }
 
+/* ─── Tailwind theme registration ──────────────────────────────────────── */
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-plus-jakarta-sans);
 
-  --color-navy:  #1E3A5F;
-  --color-slate: #4A82B8;
-  --color-green: #6FA32E;
-  --color-sage:  #EAF0E6;
-  --color-gray:  #DDE3E8;
+  --color-section-alt: var(--section-bg-alt);
+  --color-primary: var(--color-primary);
+  --color-primary-dk: var(--color-primary-dk);
+  --color-primary-lt: var(--color-primary-lt);
+  --color-navy: var(--color-navy);
+  --color-slate: var(--color-slate);
+  --color-sage: var(--color-sage);
+  --color-gray: var(--color-gray);
+
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
 }
 
 body {
-  background: #ffffff;
+  background: var(--background);
   color: var(--foreground);
   font-family: var(--font-plus-jakarta-sans), sans-serif;
+}
+
+@keyframes accordion-down {
+  from {
+    height: 0;
+  }
+  to {
+    height: var(--radix-accordion-content-height);
+  }
+}
+@keyframes accordion-up {
+  from {
+    height: var(--radix-accordion-content-height);
+  }
+  to {
+    height: 0;
+  }
 }
 
 @keyframes page-enter {
