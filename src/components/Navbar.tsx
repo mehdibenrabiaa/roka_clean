@@ -22,7 +22,7 @@ const navLinks = [
 export default function Navbar() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 w-full px-4 py-4 flex flex-col items-center">
-      <nav className="w-full max-w-6xl bg-white rounded-full px-[6px] py-[5px] flex items-center justify-between shadow-md">
+      <nav className="w-full max-w-6xl bg-white rounded-full px-[6px] py-3 md:py-[5px] flex items-center justify-between shadow-md">
 
         {/* Logo */}
         <Link href="/" className="flex items-center ml-4">
