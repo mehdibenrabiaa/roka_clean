@@ -1,4 +1,4 @@
-"use client"
+﻿"use client"
 
 import Link from "next/link"
 import Image from "next/image"
@@ -47,7 +47,7 @@ export default function Navbar() {
         {/* Logo */}
         <Link href="/" className="flex items-center ml-4">
           <Image
-            src="/logo.svg"
+            src="/SVG/Roca Clean logo_2.svg"
             alt="Roka Clean"
             width={140}
             height={38}
@@ -98,7 +98,7 @@ export default function Navbar() {
               {/* Logo inside drawer */}
               <div className="mb-8 px-2">
                 <Image
-                  src="/logo.svg"
+                  src="/SVG/Roca Clean logo_2.svg"
                   alt="Roka Clean"
                   width={200}
                   height={55}

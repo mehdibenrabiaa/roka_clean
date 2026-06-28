@@ -1,4 +1,4 @@
-import Link from "next/link"
+﻿import Link from "next/link"
 import Image from "next/image"
 import { MapPin, Phone, Mail } from "lucide-react"
 
@@ -79,7 +79,7 @@ export default function Footer() {
           {/* Brand column */}
           <div className="md:col-span-1 flex flex-col gap-6">
             <Link href="/">
-              <Image src="/logo.svg" alt="Roka Clean" width={200} height={55} className="object-contain" />
+              <Image src="/SVG/Roca Clean logo_2_bw.svg" alt="Roka Clean" width={200} height={55} className="object-contain" />
             </Link>
             <p className="text-sm text-[#1e1e1e]/75 leading-relaxed max-w-[200px]">
               Un espace propre, un esprit serein — à chaque intervention.

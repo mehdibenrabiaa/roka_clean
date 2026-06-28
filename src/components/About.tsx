@@ -65,7 +65,7 @@ function StatCounter({ end, suffix, label, decimal }: typeof stats[0]) {
 
 export default function About() {
   return (
-    <section className="bg-section-alt py-16 md:py-24">
+    <section className="bg-section-alt pt-8 pb-16 md:pt-10 md:pb-24">
       <div className="max-w-6xl mx-auto px-6">
 
         {/* Two-column layout */}

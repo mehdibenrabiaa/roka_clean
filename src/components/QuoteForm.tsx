@@ -44,8 +44,8 @@ export default function QuoteForm() {
   }
 
   return (
-    <div className="relative z-20 -mt-20 md:-mt-32 px-4 md:px-6">
-      <div className="max-w-5xl mx-auto bg-white rounded-2xl shadow-md overflow-hidden">
+    <div className="relative z-20 px-4 md:px-6 pb-8 md:pb-12 bg-section-alt">
+      <div className="max-w-5xl mx-auto bg-white rounded-2xl shadow-md overflow-hidden -translate-y-12 md:-translate-y-16">
         <div className="px-5 md:px-10 pt-5 md:pt-7 pb-5 md:pb-6">
 
           <p className="text-xs font-bold uppercase tracking-widest text-[#1e1e1e]/60 mb-6">
@@ -69,7 +69,7 @@ export default function QuoteForm() {
             </div>
 
             <div className="flex flex-col gap-1.5">
-              <Label className="text-[#1e1e1e]/60">Quand ?</Label>
+              <Label className="text-[#1e1e1e]/60">Quand&nbsp;?</Label>
               <Select onValueChange={setWhen}>
                 <SelectTrigger>
                   <SelectValue placeholder="Choisir…" />

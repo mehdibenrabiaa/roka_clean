@@ -1,4 +1,4 @@
-"use client"
+﻿"use client"
 
 import {
   Accordion,
@@ -9,32 +9,32 @@ import {
 
 const faqs = [
   {
-    question: "Quelles zones géographiques couvrez-vous ?",
+    question: "Quelles zones géographiques couvrez-vous",
     answer:
       "Nous intervenons dans toute la région et ses environs. Entrez votre code postal sur notre page d'accueil pour vérifier la disponibilité dans votre secteur.",
   },
   {
-    question: "Dois-je être présent lors du nettoyage ?",
+    question: "Dois-je être présent lors du nettoyage",
     answer:
       "Non, votre présence n'est pas obligatoire. Beaucoup de nos clients nous confient une clé ou un code d'accès. Nos équipes sont fiables et assurées.",
   },
   {
-    question: "Quels produits utilisez-vous ?",
+    question: "Quels produits utilisez-vous",
     answer:
       "Nous utilisons exclusivement des produits écologiques, sans danger pour votre famille, vos animaux et l'environnement, sans compromis sur l'efficacité.",
   },
   {
-    question: "Comment puis-je modifier ou annuler ma réservation ?",
+    question: "Comment puis-je modifier ou annuler ma réservation",
     answer:
       "Vous pouvez modifier ou annuler gratuitement jusqu'à 24 h avant l'intervention. Contactez-nous par téléphone ou via le formulaire en ligne.",
   },
   {
-    question: "Proposez-vous des forfaits récurrents ?",
+    question: "Proposez-vous des forfaits récurrents",
     answer:
       "Oui ! Nous proposons des formules hebdomadaires, bimensuelles et mensuelles avec des tarifs préférentiels. Plus c'est régulier, plus vous économisez.",
   },
   {
-    question: "Que se passe-t-il si je ne suis pas satisfait ?",
+    question: "Que se passe-t-il si je ne suis pas satisfait",
     answer:
       "Votre satisfaction est notre priorité. Si vous n'êtes pas pleinement satisfait, nous revenons gratuitement dans les 48 h pour corriger le problème.",
   },
@@ -43,7 +43,7 @@ const faqs = [
 export default function FAQ() {
   return (
     <section className="bg-white py-16 md:py-24">
-      <div className="max-w-3xl mx-auto px-6">
+      <div className="max-w-3xl mx-auto px-6 md:px-8">
 
         {/* Header */}
         <div className="text-center mb-12">
