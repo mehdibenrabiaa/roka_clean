@@ -1,6 +1,5 @@
 "use client"
 
-import { useEffect, useRef, useState } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { Check, ArrowRight } from "lucide-react"
@@ -11,57 +10,6 @@ const bullets = [
   "Sûr pour votre maison et la planète.",
   "Une équipe qualifiée pour un service fiable et de qualité.",
 ]
-
-const stats = [
-  { end: 10,  suffix: "K+",  label: "Clients Ravis" },
-  { end: 100, suffix: "K",   label: "Heures de Nettoyage" },
-  { end: 4.9, suffix: "/5",  label: "Note Moyenne", decimal: true },
-  { end: 15,  suffix: "ans", label: "Expérience" },
-]
-
-function StatCounter({ end, suffix, label, decimal }: typeof stats[0]) {
-  const [count, setCount] = useState(0)
-  const ref = useRef<HTMLDivElement>(null)
-  const started = useRef(false)
-
-  useEffect(() => {
-    const el = ref.current
-    if (!el) return
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting && !started.current) {
-          started.current = true
-          const duration = 1800
-          const steps = 60
-          const interval = duration / steps
-          let step = 0
-
-          const timer = setInterval(() => {
-            step++
-            const progress = step / steps
-            const eased = 1 - Math.pow(1 - progress, 3)
-            setCount(parseFloat((eased * end).toFixed(decimal ? 1 : 0)))
-            if (step >= steps) clearInterval(timer)
-          }, interval)
-        }
-      },
-      { threshold: 0.4 }
-    )
-
-    observer.observe(el)
-    return () => observer.disconnect()
-  }, [end, decimal])
-
-  return (
-    <div ref={ref} className="text-center">
-      <p className="text-3xl md:text-4xl font-bold text-[#1e1e1e]">
-        {decimal ? count.toFixed(1) : Math.floor(count)}{suffix}
-      </p>
-      <p className="text-sm text-[#1e1e1e]/75 mt-1">{label}</p>
-    </div>
-  )
-}
 
 export default function About() {
   return (
@@ -136,11 +84,11 @@ export default function About() {
           </div>
         </div>
 
-        {/* Animated stats bar */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 border-t border-[#DDE3E8] mt-16 pt-12">
-          {stats.map((s) => (
-            <StatCounter key={s.label} {...s} />
-          ))}
+        {/* Experience phrase */}
+        <div className="border-t border-[#DDE3E8] mt-16 pt-12 text-center">
+          <p className="text-lg md:text-xl font-semibold text-[#1e1e1e]">
+            Une équipe avec <span className="text-primary font-bold">10 ans d'expérience</span> dans le domaine du nettoyage professionnel.
+          </p>
         </div>
 
       </div>

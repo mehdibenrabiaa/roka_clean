@@ -1,60 +1,48 @@
-"use client"
-
 import Image from "next/image"
 import { ArrowRight } from "lucide-react"
-import { useCallback, useEffect, useState } from "react"
 import { Button } from "@/components/ui/button"
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-  type CarouselApi,
-} from "@/components/ui/carousel"
 
 const services = [
   {
     title: "Nettoyage de Bureau",
-    description: "Maintenez votre espace de travail propre et sain pour une productivité optimale.",
+    description: "Gardez votre espace de travail propre et sain pour favoriser la concentration et le bien-être de vos équipes.",
     image: "/office_cleaning.webp",
   },
   {
     title: "Nettoyage en Profondeur",
-    description: "Un nettoyage intensif des cuisines, salles de bains et zones difficiles d'accès.",
+    description: "Nettoyage intensif des cuisines, salles de bains et zones difficiles d'accès pour un résultat impeccable.",
     image: "/deep cleaning.webp",
   },
   {
     title: "Nettoyage après Travaux",
-    description: "Elimination complète des poussières et résidus après rénovation ou construction.",
+    description: "Élimination complète des poussières et résidus de chantier après rénovation ou construction.",
     image: "/Post-renovation cleaning.webp",
   },
   {
     title: "Nettoyage de Vitres",
-    description: "Des vitres cristallines à l'intérieur comme à l'extérieur, en toute sécurité.",
+    description: "Des vitres parfaitement nettes à l'intérieur comme à l'extérieur, réalisées en toute sécurité par nos équipes.",
     image: "/glass cleaning.webp",
+  },
+  {
+    title: "Nettoyage de Contenaires",
+    description: "Entretien des parties communes de résidences : sous-sol, locaux techniques, espaces vélos et couloirs.",
+    image: "/Nettoyage de Contenaires.webp",
+  },
+  {
+    title: "Bio Nettoyage",
+    description: "Nettoyage écologique avec des produits certifiés bio, sans danger pour votre famille et l'environnement.",
+    image: "/Biohazard Cleaning.webp",
+  },
+  {
+    title: "Bio Nettoyage Médical",
+    description: "Désinfection et bio nettoyage pour hôpitaux et cabinets médicaux, conformes aux normes sanitaires en vigueur.",
+    image: "/Hospital Cleaning.webp",
   },
 ]
 
 export default function Services() {
-  const [api, setApi] = useState<CarouselApi>()
-  const [progress, setProgress] = useState(0)
-
-  const onScroll = useCallback((api: CarouselApi) => {
-    if (!api) return
-    setProgress(api.scrollProgress())
-  }, [])
-
-  useEffect(() => {
-    if (!api) return
-    onScroll(api)
-    api.on("scroll", onScroll)
-    api.on("reInit", onScroll)
-    return () => { api.off("scroll", onScroll) }
-  }, [api, onScroll])
-
   return (
-    <section className="bg-white py-16 md:py-24 overflow-hidden">
+    <section className="bg-white py-16 md:py-24">
       <div className="max-w-6xl mx-auto px-6">
 
         {/* Header */}
@@ -68,80 +56,35 @@ export default function Services() {
           </p>
         </div>
 
-        {/* Mobile: vertical stack */}
-        <div className="flex flex-col gap-10 md:hidden">
+        {/* Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service) => (
             <div key={service.title} className="group flex flex-col">
-              <div className="relative rounded-2xl overflow-hidden h-[280px] bg-[#DDE3E8]">
+
+              {/* Image */}
+              <div className="relative rounded-2xl overflow-hidden h-[240px] bg-[#DDE3E8]">
                 <Image
                   src={service.image}
                   alt={service.title}
                   fill
-                  className="object-cover"
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
                 />
+                <div className="absolute inset-0 bg-[#1e1e1e]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>
-              <div className="pt-5">
+
+              {/* Text */}
+              <div className="pt-5 flex flex-col flex-1">
                 <h3 className="font-bold text-[#1e1e1e] text-lg mb-2">{service.title}</h3>
-                <p className="text-sm text-[#1e1e1e]/70 leading-relaxed">{service.description}</p>
+                <p className="text-sm text-[#1e1e1e]/70 leading-relaxed mb-4 flex-1">{service.description}</p>
+                <Button size="sm" className="rounded-full cursor-pointer gap-2 font-bold w-fit">
+                  Réserver <ArrowRight size={13} />
+                </Button>
               </div>
+
             </div>
           ))}
         </div>
 
-        {/* Desktop: carousel */}
-        <Carousel
-          setApi={setApi}
-          opts={{ align: "start", loop: false }}
-          className="hidden md:block w-full"
-        >
-          <CarouselContent className="-ml-4">
-            {services.map((service) => (
-              <CarouselItem key={service.title} className="pl-4 md:basis-1/2 lg:basis-1/3">
-                <div className="group flex flex-col">
-
-                  {/* Image */}
-                  <div className="relative rounded-2xl overflow-hidden h-[320px] bg-[#DDE3E8]">
-                    <Image
-                      src={service.image}
-                      alt={service.title}
-                      fill
-                      className="object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
-                    {/* Hover CTA overlay */}
-                    <div className="absolute inset-0 bg-[#1e1e1e]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                    <div className="absolute bottom-4 left-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      <Button size="default" className="rounded-full cursor-pointer gap-2 font-bold">
-                        Réserver <ArrowRight size={14} />
-                      </Button>
-                    </div>
-                  </div>
-
-                  {/* Text */}
-                  <div className="pt-5">
-                    <h3 className="font-bold text-[#1e1e1e] text-lg mb-2">{service.title}</h3>
-                    <p className="text-sm text-[#1e1e1e]/70 leading-relaxed">{service.description}</p>
-                  </div>
-
-                </div>
-              </CarouselItem>
-            ))}
-          </CarouselContent>
-
-          {/* Progress bar + arrows */}
-          <div className="flex items-center gap-4 mt-10">
-            <div className="flex-1 h-[3px] rounded-full bg-[#DDE3E8] overflow-hidden">
-              <div
-                className="h-full rounded-full bg-primary transition-all duration-150 ease-out"
-                style={{ width: `${Math.min(progress * 100, 100)}%` }}
-              />
-            </div>
-            <div className="flex gap-2 shrink-0">
-              <CarouselPrevious className="static translate-y-0 border-[#DDE3E8] text-[#1e1e1e] hover:bg-[#216bee] hover:text-white hover:border-[#216bee]" />
-              <CarouselNext className="static translate-y-0 border-[#DDE3E8] text-[#1e1e1e] hover:bg-[#216bee] hover:text-white hover:border-[#216bee]" />
-            </div>
-          </div>
-
-        </Carousel>
       </div>
     </section>
   )

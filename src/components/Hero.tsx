@@ -12,7 +12,7 @@ export default function Hero() {
     <section className="relative w-full min-h-[600px] md:min-h-[750px] flex items-center pb-28 md:pb-40">
 
       {/* Mobile background image */}
-      <div className="md:hidden absolute inset-0 opacity-10">
+      <div className="md:hidden absolute inset-0 opacity-30">
         <Image
           src="/hero-bg-mobile.webp"
           alt=""
@@ -47,12 +47,12 @@ export default function Hero() {
 
         {/* Headline */}
         <h1 className="text-4xl md:text-[52px] font-bold text-primary leading-tight">
-          Services de Nettoyage pour Maisons et Bureaux
+          Services de Nettoyage pour Professionnels et Particuliers
         </h1>
 
         {/* Subtitle */}
         <p className="text-sm md:text-base text-[#1e1e1e] max-w-md leading-relaxed">
-          Des services de nettoyage méticuleux et fiables, conçus pour garder votre espace impeccable, frais et accueillant.
+          Des services de nettoyage fiables, conçus pour garder votre espace impeccable, frais et accueillant.
         </p>
 
         {/* Trust avatars */}

@@ -32,12 +32,6 @@ const values = [
   },
 ]
 
-const team = [
-  { name: "Karim Roka", role: "Fondateur & Directeur", image: "/profile_pic_1.webp" },
-  { name: "Sara Aït", role: "Responsable Qualité", image: "/profile_pic_2.webp" },
-  { name: "Youssef Ben", role: "Chef d'Équipe", image: "/profile_pic_3.webp" },
-  { name: "Nadia Morel", role: "Service Client", image: "/profile_pic_4.webp" },
-]
 
 function StatCounter({ end, suffix, label, decimal }: typeof stats[0]) {
   const [count, setCount] = useState(0)
@@ -163,29 +157,6 @@ export default function AboutPage() {
                 <div className="w-8 h-1 rounded-full bg-primary mb-4" />
                 <h3 className="font-bold text-[#1e1e1e] text-lg mb-2">{v.title}</h3>
                 <p className="text-sm text-[#1e1e1e]/70 leading-relaxed">{v.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Team */}
-      <section className="bg-white py-16 md:py-24">
-        <div className="max-w-6xl mx-auto px-4 md:px-6">
-          <div className="text-center mb-12">
-            <h2 className="text-2xl md:text-4xl font-bold text-[#1e1e1e] mb-3">Notre Équipe</h2>
-            <p className="text-sm md:text-base text-[#1e1e1e]/75 max-w-md mx-auto">
-              Des professionnels passionnés qui font la différence chaque jour.
-            </p>
-          </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {team.map((member) => (
-              <div key={member.name} className="flex flex-col items-center text-center">
-                <div className="relative w-24 h-24 md:w-28 md:h-28 rounded-full overflow-hidden bg-[#DDE3E8] mb-4 ring-4 ring-section-alt">
-                  <Image src={member.image} alt={member.name} fill className="object-cover" />
-                </div>
-                <p className="font-bold text-[#1e1e1e] text-sm md:text-base">{member.name}</p>
-                <p className="text-xs text-[#1e1e1e]/75 mt-1">{member.role}</p>
               </div>
             ))}
           </div>

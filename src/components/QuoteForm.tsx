@@ -14,10 +14,8 @@ import {
 } from "@/components/ui/select"
 
 const serviceOptions = [
-  "Nettoyage de Bureau",
-  "Nettoyage en Profondeur",
-  "Nettoyage après Travaux",
-  "Nettoyage de Vitres",
+  "Professionnel",
+  "Particulier",
 ]
 
 const whenOptions = [
