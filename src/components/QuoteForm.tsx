@@ -92,16 +92,16 @@ export default function QuoteForm() {
       <div className="max-w-5xl mx-auto bg-white rounded-2xl shadow-md overflow-hidden -translate-y-12 md:-translate-y-16">
         <div className="px-5 md:px-10 pt-5 md:pt-7 pb-5 md:pb-6">
 
-          <p className="text-xs font-bold uppercase tracking-widest text-[#1e1e1e]/60 mb-6">
+          <p className="text-xs font-bold uppercase tracking-widest text-[#1e1e1e]/70 mb-6">
             Obtenez votre devis gratuit<span className="hidden md:inline"> —</span><br className="md:hidden" /> Rappel immédiat
           </p>
 
           <div className="grid grid-cols-1 lg:grid-cols-[1fr_1fr_1fr_1fr_auto] gap-3 items-end">
 
             <div className="flex flex-col gap-1.5">
-              <Label className="text-[#1e1e1e]/60">Service</Label>
+              <Label className="text-[#1e1e1e]/70">Service</Label>
               <Select value={service} onValueChange={setService}>
-                <SelectTrigger>
+                <SelectTrigger aria-label="Service">
                   <SelectValue placeholder="Choisir…" />
                 </SelectTrigger>
                 <SelectContent>
@@ -113,9 +113,9 @@ export default function QuoteForm() {
             </div>
 
             <div className="flex flex-col gap-1.5">
-              <Label className="text-[#1e1e1e]/60">Quand&nbsp;?</Label>
+              <Label className="text-[#1e1e1e]/70">Quand&nbsp;?</Label>
               <Select value={when} onValueChange={setWhen}>
-                <SelectTrigger>
+                <SelectTrigger aria-label="Quand">
                   <SelectValue placeholder="Choisir…" />
                 </SelectTrigger>
                 <SelectContent>
@@ -127,7 +127,7 @@ export default function QuoteForm() {
             </div>
 
             <div className="flex flex-col gap-1.5">
-              <Label className="text-[#1e1e1e]/60">Prénom</Label>
+              <Label className="text-[#1e1e1e]/70">Prénom</Label>
               <Input
                 type="text"
                 value={name}
@@ -137,7 +137,7 @@ export default function QuoteForm() {
             </div>
 
             <div className="flex flex-col gap-1.5">
-              <Label className="text-[#1e1e1e]/60">Téléphone</Label>
+              <Label className="text-[#1e1e1e]/70">Téléphone</Label>
               <Input
                 type="tel"
                 value={phone}

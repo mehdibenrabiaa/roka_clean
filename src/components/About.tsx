@@ -48,8 +48,8 @@ export default function About() {
               ))}
             </ul>
 
-            <Button className="rounded-full px-8 cursor-pointer" size="lg">
-              En savoir plus
+            <Button asChild className="rounded-full px-8 cursor-pointer" size="lg">
+              <Link href="/a-propos">En savoir plus</Link>
             </Button>
           </div>
 
