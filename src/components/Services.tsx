@@ -19,7 +19,7 @@ const services = [
     image: "/Post-renovation cleaning.webp",
   },
   {
-    title: "Nettoyage de Vitres",
+    title: "Nettoyage de Vitres et Facades",
     description: "Des vitres parfaitement nettes à l'intérieur comme à l'extérieur, réalisées en toute sécurité par nos équipes.",
     image: "/glass cleaning.webp",
   },

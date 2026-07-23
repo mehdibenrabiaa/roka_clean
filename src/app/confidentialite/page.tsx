@@ -1,8 +1,6 @@
 ﻿import type { Metadata } from "next"
 import Image from "next/image"
-import Link from "next/link"
-import { Phone } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import CTA from "@/components/CTA"
 
 export const metadata: Metadata = {
   title: "Politique de Confidentialité — Roka Clean",
@@ -103,8 +101,8 @@ Dernière mise à jour : juin 2026`,
     content: `Pour toute question relative à cette politique ou pour exercer vos droits, vous pouvez nous contacter :
 
 • E-mail : contact@rokaclean.fr
-• Téléphone : +33 1 00 00 00 00
-• Adresse : 12 Rue de la Propreté, 75001 Paris, France
+• Téléphone : +33 6 76 34 44 68
+• Adresse : 17 Rue Léon Blum, 94350 Villiers-sur-Marne
 
 Vous avez également le droit d'introduire une réclamation auprès de la CNIL (Commission Nationale de l'Informatique et des Libertés) : www.cnil.fr`,
   },
@@ -151,27 +149,12 @@ export default function ConfidentialitePage() {
         </div>
       </div>
 
-      {/* CTA banner */}
-      <section className="bg-section-alt py-16 md:py-20">
-        <div className="max-w-xl mx-auto px-6 md:px-8 text-center">
-          <h2 className="text-2xl md:text-3xl font-bold text-[#1e1e1e] mb-3">
-            Une question sur vos données&nbsp;?
-          </h2>
-          <p className="text-sm text-[#1e1e1e]/75 mb-8">
-            Notre équipe est disponible pour répondre à toutes vos questions relatives à la confidentialité, du lundi au samedi de 8h à 19h.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <Button asChild size="lg" className="rounded-full font-bold">
-              <Link href="mailto:contact@rokaclean.fr">Nous écrire</Link>
-            </Button>
-            <Button asChild size="lg" variant="outline" className="rounded-full font-bold gap-2">
-              <Link href="tel:+33100000000">
-                <Phone size={16} /> Nous appeler
-              </Link>
-            </Button>
-          </div>
-        </div>
-      </section>
+      <CTA
+        title="Une question sur vos données ?"
+        subtitle="Notre équipe est disponible pour répondre à toutes vos questions relatives à la confidentialité, du lundi au samedi de 8h à 19h."
+        primaryLabel="Nous écrire"
+        primaryHref="mailto:contact@rokaclean.fr"
+      />
 
     </main>
   )

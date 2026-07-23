@@ -5,8 +5,8 @@ import { MapPin, Phone, Mail } from "lucide-react"
 const links = [
   {
     heading: "Explorer",
-    items: ["Accueil", "À propos", "Services", "Témoignages", "FAQ"],
-    hrefs: ["/", "/a-propos", "/services", "/temoignages", "/faq"],
+    items: ["Accueil", "À propos", "Services", "FAQ"],
+    hrefs: ["/", "/a-propos", "/services", "/faq"],
   },
   {
     heading: "Nos Services",
@@ -14,7 +14,7 @@ const links = [
       "Nettoyage de Bureau",
       "Nettoyage en Profondeur",
       "Nettoyage après Travaux",
-      "Nettoyage de Vitres",
+      "Nettoyage de Vitres et Facades",
     ],
     hrefs: ["/services", "/services", "/services", "/services"],
   },
@@ -25,8 +25,8 @@ const links = [
   },
   {
     heading: "Entreprise",
-    items: ["À propos", "Notre équipe", "Contactez-nous"],
-    hrefs: ["/a-propos", "/equipe", "/contact"],
+    items: ["À propos", "Contactez-nous"],
+    hrefs: ["/a-propos", "/contact"],
   },
 ]
 
@@ -79,7 +79,7 @@ export default function Footer() {
           {/* Brand column */}
           <div className="md:col-span-1 flex flex-col gap-6">
             <Link href="/">
-              <Image src="/SVG/Roca Clean logo_2_bw.svg" alt="Roka Clean" width={200} height={55} className="object-contain" />
+              <Image src="/Roca Clean black Logo.svg" alt="Roka Clean" width={140} height={55} className="object-contain" />
             </Link>
             <p className="text-sm text-[#1e1e1e]/75 leading-relaxed max-w-[200px]">
               Un espace propre, un esprit serein — à chaque intervention.
@@ -124,11 +124,11 @@ export default function Footer() {
           <div className="flex flex-col sm:flex-row items-center gap-4 text-sm text-[#1e1e1e]/75">
             <span className="flex items-center gap-2">
               <MapPin size={14} className="text-primary shrink-0" />
-              12 Rue de la Propreté, 75001 Paris, France
+              17 Rue Léon Blum, 94350 Villiers-sur-Marne
             </span>
-            <Link href="tel:+33100000000" className="flex items-center gap-2 hover:text-primary transition-colors">
+            <Link href="tel:+33676344468" className="flex items-center gap-2 hover:text-primary transition-colors">
               <Phone size={14} className="text-primary shrink-0" />
-              +33 1 00 00 00 00
+              +33 6 76 34 44 68
             </Link>
             <Link href="mailto:contact@rokaclean.fr" className="flex items-center gap-2 hover:text-primary transition-colors">
               <Mail size={14} className="text-primary shrink-0" />

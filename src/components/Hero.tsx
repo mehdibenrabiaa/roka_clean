@@ -51,7 +51,7 @@ export default function Hero() {
         </h1>
 
         {/* Subtitle */}
-        <p className="text-sm md:text-base text-[#1e1e1e] max-w-md leading-relaxed">
+        <p className="text-base md:text-lg text-[#1e1e1e] max-w-md leading-relaxed">
           Des services de nettoyage fiables, conçus pour garder votre espace impeccable, frais et accueillant.
         </p>
 

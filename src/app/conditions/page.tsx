@@ -1,8 +1,6 @@
 ﻿import type { Metadata } from "next"
 import Image from "next/image"
-import Link from "next/link"
-import { Phone } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import CTA from "@/components/CTA"
 
 export const metadata: Metadata = {
   title: "Conditions d'Utilisation — Roka Clean",
@@ -20,9 +18,9 @@ En accédant au site ou en réservant une prestation, vous acceptez sans réserv
     title: "2. Présentation de la Société",
     content: `Roka Clean est une société spécialisée dans les services de nettoyage professionnels à destination des particuliers et des entreprises.
 
-• Siège social : 12 Rue de la Propreté, 75001 Paris, France
+• Siège social : 17 Rue Léon Blum, 94350 Villiers-sur-Marne
 • E-mail : contact@rokaclean.fr
-• Téléphone : +33 1 00 00 00 00
+• Téléphone : +33 6 76 34 44 68
 • Horaires : Lundi – Samedi, 9h00 à 19h30`,
   },
   {
@@ -141,27 +139,12 @@ export default function ConditionsPage() {
         </div>
       </div>
 
-      {/* CTA banner */}
-      <section className="bg-section-alt py-16 md:py-20">
-        <div className="max-w-xl mx-auto px-6 md:px-8 text-center">
-          <h2 className="text-2xl md:text-3xl font-bold text-[#1e1e1e] mb-3">
-            Une question sur nos conditions&nbsp;?
-          </h2>
-          <p className="text-sm text-[#1e1e1e]/75 mb-8">
-            Notre équipe est disponible du lundi au samedi de 8h à 19h pour répondre à toutes vos questions.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <Button asChild size="lg" className="rounded-full font-bold">
-              <Link href="mailto:contact@rokaclean.fr">Nous écrire</Link>
-            </Button>
-            <Button asChild size="lg" variant="outline" className="rounded-full font-bold gap-2">
-              <Link href="tel:+33100000000">
-                <Phone size={16} /> Nous appeler
-              </Link>
-            </Button>
-          </div>
-        </div>
-      </section>
+      <CTA
+        title="Une question sur nos conditions ?"
+        subtitle="Notre équipe est disponible du lundi au samedi de 8h à 19h pour répondre à toutes vos questions."
+        primaryLabel="Nous écrire"
+        primaryHref="mailto:contact@rokaclean.fr"
+      />
 
     </main>
   )

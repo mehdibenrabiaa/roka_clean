@@ -12,16 +12,18 @@ import {
   SheetTitle,
 } from "@/components/ui/sheet"
 import { useEffect, useRef, useState } from "react"
+import ContactDialog from "@/components/ContactDialog"
 
 const navLinks = [
   { label: "Accueil", href: "/" },
   { label: "À propos", href: "/a-propos" },
   { label: "Services", href: "/services" },
-  { label: "Témoignages", href: "/temoignages" },
+  { label: "FAQ", href: "/faq" },
 ]
 
 export default function Navbar() {
   const [visible, setVisible] = useState(true)
+  const [contactOpen, setContactOpen] = useState(false)
   const lastScrollY = useRef(0)
 
   useEffect(() => {
@@ -47,9 +49,9 @@ export default function Navbar() {
         {/* Logo */}
         <Link href="/" className="flex items-center ml-4">
           <Image
-            src="/SVG/Roca Clean logo_2.svg"
+            src="/Roca Clean Logo.svg"
             alt="Roka Clean"
-            width={140}
+            width={97}
             height={38}
             className="object-contain"
             priority
@@ -71,15 +73,21 @@ export default function Navbar() {
         </ul>
 
         {/* Desktop CTA */}
-        <Button className="hidden md:inline-flex rounded-full" size="default">
+        <Button
+          onClick={() => setContactOpen(true)}
+          className="hidden md:inline-flex rounded-full cursor-pointer"
+          size="default"
+        >
           Contactez-nous
         </Button>
 
         {/* Mobile — phone CTA + hamburger */}
         <div className="md:hidden flex items-center gap-2">
-          <Button className="rounded-full px-5 h-9 flex items-center gap-2" size="sm">
-            <Phone size={14} />
-            <span className="text-sm font-semibold">Appeler</span>
+          <Button asChild className="rounded-full px-5 h-9 flex items-center gap-2" size="sm">
+            <Link href="tel:+33676344468">
+              <Phone size={14} />
+              <span className="text-sm font-semibold">Appeler</span>
+            </Link>
           </Button>
 
           <Sheet>
@@ -98,9 +106,9 @@ export default function Navbar() {
               {/* Logo inside drawer */}
               <div className="mb-8 px-2">
                 <Image
-                  src="/SVG/Roca Clean logo_2.svg"
+                  src="/Roca Clean Logo.svg"
                   alt="Roka Clean"
-                  width={200}
+                  width={140}
                   height={55}
                   className="object-contain"
                 />
@@ -112,7 +120,7 @@ export default function Navbar() {
                   <SheetClose asChild key={link.href}>
                     <Link
                       href={link.href}
-                      className="text-base font-medium text-[#1e1e1e] hover:text-[#294a7d] transition-colors px-2 py-3 mr-4 rounded-none hover:bg-[#EAF0E6] border-b border-[#DDE3E8]"
+                      className="text-base font-medium text-[#1e1e1e] hover:text-primary transition-colors px-2 py-3 mr-4 rounded-none hover:bg-section-alt border-b border-[#DDE3E8]"
                     >
                       {link.label}
                     </Link>
@@ -122,15 +130,23 @@ export default function Navbar() {
 
               {/* CTA at bottom */}
               <div className="mt-auto pt-6">
-                <Button className="rounded-full w-full cursor-pointer" size="default">
-                  Contactez-nous
-                </Button>
+                <SheetClose asChild>
+                  <Button
+                    onClick={() => setContactOpen(true)}
+                    className="rounded-full w-full cursor-pointer"
+                    size="default"
+                  >
+                    Contactez-nous
+                  </Button>
+                </SheetClose>
               </div>
             </SheetContent>
           </Sheet>
         </div>
 
       </nav>
+
+      <ContactDialog open={contactOpen} onOpenChange={setContactOpen} />
 
     </header>
   )

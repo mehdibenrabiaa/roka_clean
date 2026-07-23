@@ -7,7 +7,6 @@
 :root {
   /* Backgrounds */
   --background: #ffffff;
-  --section-bg: #ffffff;
   --section-bg-alt: #ecf2fe; /* faint blue — alternating sections */
 
   /* Text */
@@ -16,11 +15,10 @@
   /* Brand palette */
   --color-primary: #294a7d; /* main blue */
   --color-primary-dk: #1a5fd4; /* dark blue — hover states */
-  --color-primary-lt: #93c5fd; /* light blue — accents & highlights */
-  --color-navy: #1e1e1e; /* headings / dark text — mirrors --foreground */
-  --color-slate: #4a82b8; /* secondary blue */
-  --color-sage: #eaf0e6; /* soft sage tint */
-  --color-gray: #dde3e8; /* borders / dividers */
+
+  /* "Comment Roka Clean..." section gradient */
+  --gradient-start: #52a4ff;
+  --gradient-end: #ecf2fe;
 }
 
 /* ─── Tailwind theme registration ──────────────────────────────────────── */
@@ -32,11 +30,6 @@
   --color-section-alt: var(--section-bg-alt);
   --color-primary: var(--color-primary);
   --color-primary-dk: var(--color-primary-dk);
-  --color-primary-lt: var(--color-primary-lt);
-  --color-navy: var(--color-navy);
-  --color-slate: var(--color-slate);
-  --color-sage: var(--color-sage);
-  --color-gray: var(--color-gray);
 
   --animate-accordion-down: accordion-down 0.2s ease-out;
   --animate-accordion-up: accordion-up 0.2s ease-out;

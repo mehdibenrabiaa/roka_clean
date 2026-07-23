@@ -29,7 +29,7 @@ const steps = [
 
 export default function HowItWorks() {
   return (
-    <section className="py-16 md:py-24" style={{ background: "linear-gradient(129deg, rgb(82 164 255) 0%, rgb(236, 242, 254) 60%)" }}>
+    <section className="py-16 md:py-24" style={{ background: "linear-gradient(129deg, var(--gradient-start) 0%, var(--gradient-end) 60%)" }}>
       <div className="max-w-6xl mx-auto px-6">
 
         {/* Header */}

@@ -1,10 +1,9 @@
 "use client"
 
 import Image from "next/image"
-import Link from "next/link"
 import { useEffect, useRef, useState } from "react"
-import { Check, Phone } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import { Check } from "lucide-react"
+import CTA from "@/components/CTA"
 
 const stats = [
   { end: 10,  suffix: "K+",  label: "Clients Ravis" },
@@ -163,27 +162,10 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="bg-section-alt py-16 md:py-20">
-        <div className="max-w-xl mx-auto px-4 md:px-6 text-center">
-          <h2 className="text-2xl md:text-3xl font-bold text-[#1e1e1e] mb-3">
-            Prêt à découvrir la différence Roka Clean ?
-          </h2>
-          <p className="text-sm text-[#1e1e1e]/75 mb-8">
-            Rejoignez nos milliers de clients satisfaits et réservez votre première intervention dès aujourd'hui.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <Button asChild size="lg" className="rounded-full font-bold">
-              <Link href="/">Réserver maintenant</Link>
-            </Button>
-            <Button asChild size="lg" variant="outline" className="rounded-full font-bold gap-2">
-              <Link href="tel:+33000000000">
-                <Phone size={16} /> Nous appeler
-              </Link>
-            </Button>
-          </div>
-        </div>
-      </section>
+      <CTA
+        title="Prêt à découvrir la différence Roka Clean ?"
+        subtitle="Rejoignez nos milliers de clients satisfaits et réservez votre première intervention dès aujourd'hui."
+      />
 
     </main>
   )
