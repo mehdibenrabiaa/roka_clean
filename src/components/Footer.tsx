@@ -20,13 +20,13 @@ const links = [
   },
   {
     heading: "Ressources",
-    items: ["Blog", "Support", "Politique de confidentialité", "Conditions d'utilisation"],
-    hrefs: ["/blog", "/support", "/confidentialite", "/conditions"],
+    items: ["Politique de confidentialité", "Conditions d'utilisation"],
+    hrefs: ["/confidentialite", "/conditions"],
   },
   {
     heading: "Entreprise",
-    items: ["À propos", "Contactez-nous"],
-    hrefs: ["/a-propos", "/contact"],
+    items: ["À propos"],
+    hrefs: ["/a-propos"],
   },
 ]
 

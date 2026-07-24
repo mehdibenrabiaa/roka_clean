@@ -1,3 +1,4 @@
+import Link from "next/link"
 import { Wrench, Sofa, Droplet, PlugZap, PaintRoller, Drill } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
@@ -68,8 +69,8 @@ export default function Bricolage() {
 
         {/* CTA */}
         <div className="text-center mt-12">
-          <Button className="rounded-full px-8 cursor-pointer" size="lg">
-            Demander un devis
+          <Button asChild className="rounded-full px-8 cursor-pointer" size="lg">
+            <Link href="/devis">Demander un devis</Link>
           </Button>
         </div>
 

@@ -1,6 +1,8 @@
 import type { Metadata } from "next"
 import Image from "next/image"
-import { Check } from "lucide-react"
+import Link from "next/link"
+import { ArrowRight, Check } from "lucide-react"
+import { Button } from "@/components/ui/button"
 import CTA from "@/components/CTA"
 
 export const metadata: Metadata = {
@@ -10,7 +12,6 @@ export const metadata: Metadata = {
 
 const categories = [
   {
-    emoji: "🏠",
     title: "Nettoyage de maisons",
     items: [
       "Dépoussiérage",
@@ -24,7 +25,6 @@ const categories = [
     ],
   },
   {
-    emoji: "🏘️",
     title: "Nettoyage de résidences",
     items: [
       "Nettoyage des halls d'entrée",
@@ -38,7 +38,6 @@ const categories = [
     ],
   },
   {
-    emoji: "🏢",
     title: "Nettoyage de bureaux",
     items: [
       "Dépoussiérage des postes de travail",
@@ -52,7 +51,6 @@ const categories = [
     ],
   },
   {
-    emoji: "🏥",
     title: "Nettoyage d'hôpitaux et cliniques",
     items: [
       "Désinfection des chambres",
@@ -66,7 +64,6 @@ const categories = [
     ],
   },
   {
-    emoji: "🛍️",
     title: "Nettoyage de magasins",
     items: [
       "Nettoyage des espaces de vente",
@@ -80,7 +77,6 @@ const categories = [
     ],
   },
   {
-    emoji: "🏨",
     title: "Nettoyage d'hôtels",
     items: [
       "Nettoyage des chambres",
@@ -94,7 +90,6 @@ const categories = [
     ],
   },
   {
-    emoji: "🍽️",
     title: "Nettoyage de restaurants",
     items: [
       "Nettoyage des salles",
@@ -108,7 +103,6 @@ const categories = [
     ],
   },
   {
-    emoji: "🏫",
     title: "Nettoyage d'écoles",
     items: [
       "Nettoyage des salles de classe",
@@ -122,7 +116,6 @@ const categories = [
     ],
   },
   {
-    emoji: "🏭",
     title: "Nettoyage industriel",
     items: [
       "Nettoyage des ateliers",
@@ -136,7 +129,6 @@ const categories = [
     ],
   },
   {
-    emoji: "🧱",
     title: "Nettoyage après chantier",
     items: [
       "Enlèvement des gravats",
@@ -150,7 +142,6 @@ const categories = [
     ],
   },
   {
-    emoji: "🪟",
     title: "Nettoyage de vitres et façades",
     items: [
       "Vitres intérieures",
@@ -193,11 +184,8 @@ export default function ServicesPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {categories.map((cat) => (
               <div key={cat.title} className="bg-section-alt rounded-2xl p-6 md:p-8">
-                <div className="flex items-center gap-3 mb-5">
-                  <span className="text-2xl">{cat.emoji}</span>
-                  <h2 className="font-bold text-[#1e1e1e] text-lg">{cat.title}</h2>
-                </div>
-                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-2.5">
+                <h2 className="font-bold text-[#1e1e1e] text-2xl text-center px-6 pt-6 pb-10 mb-5">{cat.title}</h2>
+                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-2.5 mb-6">
                   {cat.items.map((item) => (
                     <li key={item} className="flex items-start gap-2">
                       <span className="mt-0.5 flex-shrink-0 w-4 h-4 rounded-full bg-primary flex items-center justify-center">
@@ -207,6 +195,11 @@ export default function ServicesPage() {
                     </li>
                   ))}
                 </ul>
+                <Button asChild size="sm" className="rounded-full cursor-pointer gap-2 font-bold w-fit">
+                  <Link href="/devis?type=Nettoyage">
+                    Demander un devis <ArrowRight size={13} />
+                  </Link>
+                </Button>
               </div>
             ))}
           </div>

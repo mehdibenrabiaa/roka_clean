@@ -1,4 +1,5 @@
 import Image from "next/image"
+import Link from "next/link"
 import { ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
@@ -76,8 +77,10 @@ export default function Services() {
               <div className="pt-5 flex flex-col flex-1">
                 <h3 className="font-bold text-[#1e1e1e] text-lg mb-2">{service.title}</h3>
                 <p className="text-sm text-[#1e1e1e]/70 leading-relaxed mb-4 flex-1">{service.description}</p>
-                <Button size="sm" className="rounded-full cursor-pointer gap-2 font-bold w-fit">
-                  Réserver <ArrowRight size={13} />
+                <Button asChild size="sm" className="rounded-full cursor-pointer gap-2 font-bold w-fit">
+                  <Link href={`/devis?type=Nettoyage&category=${encodeURIComponent(service.title)}`}>
+                    Réserver <ArrowRight size={13} />
+                  </Link>
                 </Button>
               </div>
 
