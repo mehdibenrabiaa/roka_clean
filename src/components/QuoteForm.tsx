@@ -1,4 +1,4 @@
-"use client"
+﻿"use client"
 
 import { useState } from "react"
 import { Phone } from "lucide-react"
@@ -28,7 +28,7 @@ const whenOptions = [
   "Date flexible",
 ]
 
-const PHONE = "+33100000000"
+const PHONE = "+33676344468"
 
 export default function QuoteForm() {
   const [service, setService] = useState("")

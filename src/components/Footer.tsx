@@ -126,9 +126,9 @@ export default function Footer() {
               <MapPin size={14} className="text-primary shrink-0" />
               12 Rue de la Propreté, 75001 Paris, France
             </span>
-            <Link href="tel:+33100000000" className="flex items-center gap-2 hover:text-primary transition-colors">
+            <Link href="tel:+33676344468" className="flex items-center gap-2 hover:text-primary transition-colors">
               <Phone size={14} className="text-primary shrink-0" />
-              +33 1 00 00 00 00
+              +33 6 76 34 44 68
             </Link>
             <Link href="mailto:contact@rokaclean.fr" className="flex items-center gap-2 hover:text-primary transition-colors">
               <Mail size={14} className="text-primary shrink-0" />

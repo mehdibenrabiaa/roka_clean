@@ -22,7 +22,7 @@ En accédant au site ou en réservant une prestation, vous acceptez sans réserv
 
 • Siège social : 12 Rue de la Propreté, 75001 Paris, France
 • E-mail : contact@rokaclean.fr
-• Téléphone : +33 1 00 00 00 00
+• Téléphone : +33 6 76 34 44 68
 • Horaires : Lundi – Samedi, 9h00 à 19h30`,
   },
   {
@@ -155,7 +155,7 @@ export default function ConditionsPage() {
               <Link href="mailto:contact@rokaclean.fr">Nous écrire</Link>
             </Button>
             <Button asChild size="lg" variant="outline" className="rounded-full font-bold gap-2">
-              <Link href="tel:+33100000000">
+              <Link href="tel:+33676344468">
                 <Phone size={16} /> Nous appeler
               </Link>
             </Button>

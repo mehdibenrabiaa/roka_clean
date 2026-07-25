@@ -103,7 +103,7 @@ Dernière mise à jour : juin 2026`,
     content: `Pour toute question relative à cette politique ou pour exercer vos droits, vous pouvez nous contacter :
 
 • E-mail : contact@rokaclean.fr
-• Téléphone : +33 1 00 00 00 00
+• Téléphone : +33 6 76 34 44 68
 • Adresse : 12 Rue de la Propreté, 75001 Paris, France
 
 Vous avez également le droit d'introduire une réclamation auprès de la CNIL (Commission Nationale de l'Informatique et des Libertés) : www.cnil.fr`,
@@ -165,7 +165,7 @@ export default function ConfidentialitePage() {
               <Link href="mailto:contact@rokaclean.fr">Nous écrire</Link>
             </Button>
             <Button asChild size="lg" variant="outline" className="rounded-full font-bold gap-2">
-              <Link href="tel:+33100000000">
+              <Link href="tel:+33676344468">
                 <Phone size={16} /> Nous appeler
               </Link>
             </Button>

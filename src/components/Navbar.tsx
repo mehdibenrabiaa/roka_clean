@@ -71,9 +71,13 @@ export default function Navbar() {
         </ul>
 
         {/* Desktop CTA */}
-        <Button className="hidden md:inline-flex rounded-full" size="default">
-          Contactez-nous
-        </Button>
+        <Link
+          href="tel:+33676344468"
+          className="hidden md:inline-flex items-center gap-2 rounded-full bg-primary text-white text-sm font-semibold px-5 py-2.5 hover:bg-primary/90 transition-colors"
+        >
+          <Phone size={15} />
+          +33 6 76 34 44 68
+        </Link>
 
         {/* Mobile — phone CTA + hamburger */}
         <div className="md:hidden flex items-center gap-2">
