@@ -8,7 +8,7 @@ import CTA from "@/components/CTA"
 const stats = [
   { end: 10,  suffix: "K+",  label: "Clients Ravis" },
   { end: 100, suffix: "K",   label: "Heures de Nettoyage" },
-  { end: 4.9, suffix: "/5",  label: "Note Moyenne", decimal: true },
+  { end: 4.5, suffix: "/5",  label: "Note Moyenne", decimal: true },
   { end: 15,  suffix: "ans", label: "Expérience" },
 ]
 
