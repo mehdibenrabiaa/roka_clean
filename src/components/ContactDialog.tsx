@@ -1,7 +1,7 @@
 "use client"
 
 import Link from "next/link"
-import { Heart, Phone, Mail, Handshake } from "lucide-react"
+import { Phone, Mail, Handshake, Heart } from "lucide-react"
 import {
   Dialog,
   DialogContent,
@@ -142,7 +142,7 @@ export default function ContactDialog({
         </div>
 
         <p className="flex items-center justify-center gap-1.5 text-center text-xs text-[#1e1e1e]/60 mt-4">
-          Merci pour votre confiance <Heart size={12} className="text-primary" />
+          Merci pour votre confiance <Heart size={13} className="text-primary" />
         </p>
       </DialogContent>
     </Dialog>
