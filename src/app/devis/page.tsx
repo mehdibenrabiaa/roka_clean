@@ -18,13 +18,13 @@ export default function DevisPage() {
         style={{ background: "#0072DB" }}
       >
         <div className="max-w-3xl mx-auto px-6 md:px-8 text-center flex flex-col items-center gap-5">
-          <span className="inline-block text-xs font-semibold text-white bg-white/20 rounded-full px-4 py-1.5">
+          <span className="inline-block text-xs font-semibold text-primary bg-white rounded-full px-4 py-1.5">
             Devis gratuit
           </span>
           <h1 className="text-3xl md:text-5xl font-bold text-white leading-tight">
             Obtenez votre devis de nettoyage en 2 minutes
           </h1>
-          <p className="text-sm md:text-base text-white/80 max-w-md">
+          <p className="text-sm md:text-base text-white max-w-md">
             Remplissez le formulaire ci-dessous et notre équipe vous recontacte rapidement avec un tarif adapté à votre besoin.
           </p>
         </div>

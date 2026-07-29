@@ -73,6 +73,7 @@ export default function QuoteForm() {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ service, timing: when, first_name: name, phone }),
+        signal: AbortSignal.timeout(15000),
       })
       if (!res.ok) throw new Error()
       setShowThanks(true)

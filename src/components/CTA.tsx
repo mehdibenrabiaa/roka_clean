@@ -15,7 +15,7 @@ export default function CTA({
   title,
   subtitle,
   primaryLabel = "Réserver maintenant",
-  primaryHref = "/",
+  primaryHref = "/devis",
   secondaryLabel = "Nous appeler",
   secondaryHref = "tel:+33676344468",
 }: CTAProps) {

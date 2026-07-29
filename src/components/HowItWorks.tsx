@@ -1,6 +1,7 @@
 "use client"
 
 import Image from "next/image"
+import Link from "next/link"
 import { Button } from "@/components/ui/button"
 
 const steps = [
@@ -71,8 +72,8 @@ export default function HowItWorks() {
                 <h3 className="text-lg font-bold text-[#1e1e1e] mb-2">{step.title}</h3>
                 <p className="text-sm text-[#1e1e1e]/70 leading-relaxed">{step.description}</p>
                 {step.cta && (
-                  <Button className="mt-4 rounded-full cursor-pointer font-bold" size="lg">
-                    {step.cta}
+                  <Button asChild className="mt-4 rounded-full cursor-pointer font-bold" size="lg">
+                    <Link href="/devis">{step.cta}</Link>
                   </Button>
                 )}
               </div>

@@ -17,7 +17,7 @@ const EMAIL = "contact@rokaclean.fr"
 
 const socials = [
   {
-    href: "#",
+    href: "https://www.facebook.com/rokaclean/",
     label: "Facebook",
     svg: (
       <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4">

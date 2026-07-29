@@ -39,6 +39,7 @@ export default function Newsletter() {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email }),
+        signal: AbortSignal.timeout(15000),
       })
       if (res.status === 409) {
         setResult("duplicate")
