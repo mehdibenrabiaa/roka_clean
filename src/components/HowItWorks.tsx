@@ -29,24 +29,24 @@ const steps = [
 
 export default function HowItWorks() {
   return (
-    <section className="py-16 md:py-24" style={{ background: "linear-gradient(129deg, var(--gradient-start) 0%, var(--gradient-end) 60%)" }}>
+    <section className="py-16 min-[1080px]:py-24" style={{ background: "linear-gradient(129deg, var(--gradient-start) 0%, var(--gradient-end) 60%)" }}>
       <div className="max-w-6xl mx-auto px-6">
 
         {/* Header */}
         <div className="mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-[#1e1e1e] leading-tight mb-3 max-w-xl">
+          <h2 className="text-3xl min-[1080px]:text-4xl font-bold text-[#1e1e1e] leading-tight mb-3 max-w-xl">
             Comment Roka Clean Garde Votre Maison Étincelante
           </h2>
-          <p className="text-sm md:text-base text-[#1e1e1e]/70 max-w-md">
+          <p className="text-sm min-[1080px]:text-base text-[#1e1e1e]/70 max-w-md">
             De la réservation au résultat parfait — voici comment nous rendons le nettoyage simple et sans effort.
           </p>
         </div>
 
         {/* Two-column layout */}
-        <div className="flex flex-col md:flex-row gap-10 items-stretch">
+        <div className="flex flex-col min-[1080px]:flex-row gap-10 items-stretch">
 
           {/* Left — image */}
-          <div className="flex-1 relative min-h-[340px] md:min-h-0">
+          <div className="flex-1 relative min-h-[340px] min-[1080px]:min-h-0">
             <div className="relative rounded-2xl overflow-hidden h-full min-h-[340px] bg-[#DDE3E8]">
               <Image
                 src="/steps.webp"

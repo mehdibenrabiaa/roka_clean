@@ -37,7 +37,7 @@ const tasks = [
 
 export default function Bricolage() {
   return (
-    <section className="bg-section-alt py-16 md:py-24">
+    <section className="bg-section-alt py-16 min-[1080px]:py-24">
       <div className="max-w-6xl mx-auto px-6">
 
         {/* Header */}
@@ -45,10 +45,10 @@ export default function Bricolage() {
           <span className="inline-block text-xs font-bold uppercase tracking-wide text-primary mb-3">
             Au-delà du nettoyage
           </span>
-          <h2 className="text-3xl md:text-4xl font-bold text-[#1e1e1e] mb-4">
+          <h2 className="text-3xl min-[1080px]:text-4xl font-bold text-[#1e1e1e] mb-4">
             Nos Services de Bricolage
           </h2>
-          <p className="text-sm md:text-base text-[#1e1e1e]/70 max-w-md mx-auto">
+          <p className="text-sm min-[1080px]:text-base text-[#1e1e1e]/70 max-w-md mx-auto">
             En plus du nettoyage, notre équipe polyvalente prend en charge les
             petits travaux les plus demandés par les foyers en France.
           </p>

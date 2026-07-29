@@ -13,11 +13,11 @@ const bullets = [
 
 export default function About() {
   return (
-    <section className="bg-section-alt pt-8 pb-16 md:pt-10 md:pb-24">
+    <section className="bg-section-alt pt-8 pb-16 min-[1080px]:pt-10 min-[1080px]:pb-24">
       <div className="max-w-6xl mx-auto px-6">
 
         {/* Two-column layout */}
-        <div className="flex flex-col md:flex-row gap-12 items-center">
+        <div className="flex flex-col min-[1080px]:flex-row gap-12 items-center">
 
           {/* Left — text content */}
           <div className="flex-1">
@@ -28,11 +28,11 @@ export default function About() {
               À propos <ArrowRight size={14} />
             </Link>
 
-            <h2 className="text-3xl md:text-4xl font-bold text-[#1e1e1e] leading-tight mb-5">
+            <h2 className="text-3xl min-[1080px]:text-4xl font-bold text-[#1e1e1e] leading-tight mb-5">
               Là où la Qualité Rencontre le Vrai Soin
             </h2>
 
-            <p className="text-[#1e1e1e]/70 text-sm md:text-base mb-7 max-w-md">
+            <p className="text-[#1e1e1e]/70 text-sm min-[1080px]:text-base mb-7 max-w-md">
               Chez Roka Clean, nous croyons qu&apos;une maison propre inspire un esprit clair.
               Nos professionnels formés offrent un nettoyage écologique et soigné.
             </p>
@@ -55,7 +55,7 @@ export default function About() {
 
           {/* Right — image + floating card */}
           <div className="flex-1 relative w-full">
-            <div className="relative rounded-2xl overflow-hidden h-[380px] md:h-[460px] w-full bg-[#DDE3E8]">
+            <div className="relative rounded-2xl overflow-hidden h-[380px] min-[1080px]:h-[460px] w-full bg-[#DDE3E8]">
               <Image
                 src="/professionnelde nettoyage Roka Clean.webp"
                 alt="Professionnel de nettoyage Roka Clean"
@@ -65,7 +65,7 @@ export default function About() {
             </div>
 
             {/* Floating trust badge */}
-            <div className="absolute bottom-5 left-4 md:-left-14 bg-white rounded-2xl px-5 py-4 shadow-lg">
+            <div className="absolute bottom-5 left-4 min-[1080px]:-left-14 bg-white rounded-2xl px-5 py-4 shadow-lg">
               <p className="text-xs font-semibold text-[#1e1e1e] mb-3">Approuvé par nos clients</p>
               <div className="flex items-center gap-3">
                 <div className="flex -space-x-2">
@@ -86,7 +86,7 @@ export default function About() {
 
         {/* Experience phrase */}
         <div className="border-t border-[#DDE3E8] mt-16 pt-12 text-center">
-          <p className="text-lg md:text-xl font-semibold text-[#1e1e1e]">
+          <p className="text-lg min-[1080px]:text-xl font-semibold text-[#1e1e1e]">
             Une équipe avec <span className="text-primary font-bold">10 ans d'expérience</span> dans le domaine du nettoyage professionnel.
           </p>
         </div>

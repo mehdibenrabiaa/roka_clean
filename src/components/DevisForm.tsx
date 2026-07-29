@@ -127,6 +127,9 @@ export default function DevisForm() {
 
   return (
     <div className="bg-white rounded-2xl shadow-md p-6 md:p-8 w-full">
+      <p className="text-sm text-[#1e1e1e]/70 leading-relaxed mb-4">
+        Indiquez le type de prestation dont vous avez besoin, la catégorie associée, puis vos coordonnées : notre équipe vous envoie un tarif personnalisé sous 24h, sans engagement.
+      </p>
       <p className="text-xs font-bold uppercase tracking-widest text-[#1e1e1e]/70 mb-6">
         Vos coordonnées — Réponse sous 24h
       </p>
@@ -136,7 +139,7 @@ export default function DevisForm() {
           <div className="flex flex-col gap-1.5">
             <Label className="text-[#1e1e1e]/70">Type de prestation</Label>
             <Select value={jobType} onValueChange={handleJobTypeChange}>
-              <SelectTrigger aria-label="Type de prestation" className="w-full">
+              <SelectTrigger aria-label="Type de prestation" className={`w-full ${jobType ? "border-primary" : ""}`}>
                 <SelectValue placeholder="Choisir…" />
               </SelectTrigger>
               <SelectContent>
@@ -150,7 +153,7 @@ export default function DevisForm() {
           <div className="flex flex-col gap-1.5">
             <Label className="text-[#1e1e1e]/70">Catégorie</Label>
             <Select value={category} onValueChange={setCategory} disabled={!jobType}>
-              <SelectTrigger aria-label="Catégorie" className="w-full">
+              <SelectTrigger aria-label="Catégorie" className={`w-full ${category ? "border-primary" : ""}`}>
                 <SelectValue placeholder={jobType ? "Choisir…" : "Choisissez d'abord un type"} />
               </SelectTrigger>
               <SelectContent>
@@ -166,7 +169,7 @@ export default function DevisForm() {
           <div className="flex flex-col gap-1.5">
             <Label className="text-[#1e1e1e]/70">Service</Label>
             <Select value={service} onValueChange={setService}>
-              <SelectTrigger aria-label="Service" className="w-full">
+              <SelectTrigger aria-label="Service" className={`w-full ${service ? "border-primary" : ""}`}>
                 <SelectValue placeholder="Choisir…" />
               </SelectTrigger>
               <SelectContent>
@@ -180,7 +183,7 @@ export default function DevisForm() {
           <div className="flex flex-col gap-1.5">
             <Label className="text-[#1e1e1e]/70">Quand&nbsp;?</Label>
             <Select value={when} onValueChange={setWhen}>
-              <SelectTrigger aria-label="Quand" className="w-full">
+              <SelectTrigger aria-label="Quand" className={`w-full ${when ? "border-primary" : ""}`}>
                 <SelectValue placeholder="Choisir…" />
               </SelectTrigger>
               <SelectContent>
@@ -200,6 +203,7 @@ export default function DevisForm() {
               value={name}
               onChange={(e) => setName(e.target.value)}
               placeholder="Votre prénom"
+              className={name ? "border-primary" : ""}
             />
           </div>
 
@@ -210,6 +214,7 @@ export default function DevisForm() {
               value={phone}
               onChange={(e) => setPhone(e.target.value)}
               placeholder="Votre numéro"
+              className={phone ? "border-primary" : ""}
             />
           </div>
         </div>

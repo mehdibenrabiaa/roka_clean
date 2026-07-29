@@ -70,15 +70,15 @@ export default function Newsletter() {
       </div>
 
       {/* Card — full width on mobile, constrained on desktop */}
-      <div className="relative z-10 w-full max-w-6xl mx-auto px-4 md:px-6 py-12 md:py-16 flex justify-start">
-        <div className="w-full md:max-w-[480px] bg-white rounded-2xl p-6 md:p-10 shadow-xl">
+      <div className="relative z-10 w-full max-w-6xl mx-auto px-4 min-[1080px]:px-6 py-12 min-[1080px]:py-16 flex justify-start">
+        <div className="w-full min-[1080px]:max-w-[480px] bg-white rounded-2xl p-6 min-[1080px]:p-10 shadow-xl">
 
           {result === "success" ? (
             <div className="page-transition text-center py-4">
               <div className="mx-auto mb-4 w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center">
                 <HeartIcon />
               </div>
-              <h2 className="text-xl md:text-2xl font-bold text-[#1e1e1e] leading-tight mb-2">
+              <h2 className="text-xl min-[1080px]:text-2xl font-bold text-[#1e1e1e] leading-tight mb-2">
                 Merci pour votre confiance !
               </h2>
               <p className="text-sm text-[#1e1e1e]/75">
@@ -87,7 +87,7 @@ export default function Newsletter() {
             </div>
           ) : (
             <>
-              <h2 className="text-2xl md:text-4xl font-bold text-[#1e1e1e] leading-tight mb-3">
+              <h2 className="text-2xl min-[1080px]:text-4xl font-bold text-[#1e1e1e] leading-tight mb-3">
                 Rejoignez la Communauté Roka Clean
               </h2>
 
