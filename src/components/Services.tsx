@@ -30,11 +30,6 @@ const services = [
     image: "/Nettoyage de Contenaires.webp",
   },
   {
-    title: "Bio Nettoyage",
-    description: "Nettoyage écologique avec des produits certifiés bio, sans danger pour votre famille et l'environnement.",
-    image: "/Biohazard Cleaning.webp",
-  },
-  {
     title: "Bio Nettoyage Médical",
     description: "Désinfection et bio nettoyage pour hôpitaux et cabinets médicaux, conformes aux normes sanitaires en vigueur.",
     image: "/Hospital Cleaning.webp",

@@ -126,7 +126,7 @@ export default function DevisForm() {
   }
 
   return (
-    <div className="bg-white rounded-2xl shadow-md p-6 md:p-8 w-full">
+    <div className="bg-white rounded-2xl shadow-md border border-[#DDE3E8] p-6 md:p-8 w-full">
       <p className="text-sm text-[#1e1e1e]/70 leading-relaxed mb-4">
         Indiquez le type de prestation dont vous avez besoin, la catégorie associée, puis vos coordonnées : notre équipe vous envoie un tarif personnalisé sous 24h, sans engagement.
       </p>

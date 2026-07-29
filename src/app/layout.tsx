@@ -3,7 +3,6 @@ import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar"
 import Footer from "@/components/Footer";
-import ColorCustomizer from "@/components/ColorCustomizer";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   variable: "--font-plus-jakarta-sans",
@@ -30,7 +29,6 @@ export default function RootLayout({
           <Navbar />
           <div className="flex flex-col flex-1">{children}</div>
           <Footer />
-          <ColorCustomizer />
         </body>
     </html>
   );

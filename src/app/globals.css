@@ -13,12 +13,12 @@
   --foreground: #1e1e1e; /* main text color */
 
   /* Brand palette */
-  --color-primary: #294a7d; /* main blue */
-  --color-primary-dk: #1a5fd4; /* dark blue — hover states */
+  --color-primary: #006e8f; /* main blue */
+  --color-primary-dk: #006e8f; /* hover states */
 
   /* "Comment Roka Clean..." section gradient */
-  --gradient-start: #52a4ff;
-  --gradient-end: #ecf2fe;
+  --gradient-start: #cbf0ff;
+  --gradient-end: #012f7c;
 }
 
 /* ─── Tailwind theme registration ──────────────────────────────────────── */
