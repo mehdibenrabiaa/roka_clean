@@ -30,11 +30,6 @@ const services = [
     image: "/Nettoyage de Contenaires.webp",
   },
   {
-    title: "Bio Nettoyage",
-    description: "Nettoyage écologique avec des produits certifiés bio, sans danger pour votre famille et l'environnement.",
-    image: "/Biohazard Cleaning.webp",
-  },
-  {
     title: "Bio Nettoyage Médical",
     description: "Désinfection et bio nettoyage pour hôpitaux et cabinets médicaux, conformes aux normes sanitaires en vigueur.",
     image: "/Hospital Cleaning.webp",
@@ -43,15 +38,15 @@ const services = [
 
 export default function Services() {
   return (
-    <section className="bg-white py-16 md:py-24">
+    <section className="bg-white py-16 min-[1080px]:py-24">
       <div className="max-w-6xl mx-auto px-6">
 
         {/* Header */}
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-[#1e1e1e] mb-4">
+          <h2 className="text-3xl min-[1080px]:text-4xl font-bold text-[#1e1e1e] mb-4">
             La Fraîcheur Commence avec Roka Clean
           </h2>
-          <p className="text-sm md:text-base text-[#1e1e1e]/70 max-w-md mx-auto">
+          <p className="text-sm min-[1080px]:text-base text-[#1e1e1e]/70 max-w-md mx-auto">
             Du nettoyage hebdomadaire au grand ménage, nos experts apportent
             propreté et soin à chaque espace.
           </p>
@@ -77,9 +72,13 @@ export default function Services() {
               <div className="pt-5 flex flex-col flex-1">
                 <h3 className="font-bold text-[#1e1e1e] text-lg mb-2">{service.title}</h3>
                 <p className="text-sm text-[#1e1e1e]/70 leading-relaxed mb-4 flex-1">{service.description}</p>
-                <Button asChild size="sm" className="rounded-full cursor-pointer gap-2 font-bold w-fit">
+                <Button
+                  asChild
+                  size="sm"
+                  className="rounded-full cursor-pointer gap-2 font-bold w-fit h-11 px-6 text-sm min-[1080px]:h-8 min-[1080px]:px-4 min-[1080px]:text-xs"
+                >
                   <Link href={`/devis?type=Nettoyage&category=${encodeURIComponent(service.title)}`}>
-                    Réserver <ArrowRight size={13} />
+                    Réserver <ArrowRight size={14} />
                   </Link>
                 </Button>
               </div>

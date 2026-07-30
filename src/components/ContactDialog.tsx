@@ -1,7 +1,7 @@
 "use client"
 
 import Link from "next/link"
-import { Phone, Mail, Handshake } from "lucide-react"
+import { Phone, Mail, Handshake, Heart } from "lucide-react"
 import {
   Dialog,
   DialogContent,
@@ -17,7 +17,7 @@ const EMAIL = "contact@rokaclean.fr"
 
 const socials = [
   {
-    href: "#",
+    href: "https://www.facebook.com/rokaclean/",
     label: "Facebook",
     svg: (
       <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4">
@@ -110,7 +110,7 @@ export default function ContactDialog({
             </span>
             <span className="flex flex-col">
               <span className="text-sm font-bold text-[#1e1e1e]">WhatsApp</span>
-              <span className="text-xs text-[#1e1e1e]/60">Discutez avec nous directement</span>
+              <span className="text-xs text-[#1e1e1e]/60">{PHONE_DISPLAY}</span>
             </span>
           </Link>
 
@@ -141,8 +141,8 @@ export default function ContactDialog({
           ))}
         </div>
 
-        <p className="text-center text-xs text-[#1e1e1e]/60 mt-4">
-          Merci pour votre confiance 💙
+        <p className="flex items-center justify-center gap-1.5 text-center text-xs text-[#1e1e1e]/60 mt-4">
+          Merci pour votre confiance <Heart size={13} className="text-primary" />
         </p>
       </DialogContent>
     </Dialog>

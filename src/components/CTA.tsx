@@ -15,15 +15,17 @@ export default function CTA({
   title,
   subtitle,
   primaryLabel = "Réserver maintenant",
-  primaryHref = "/",
+  primaryHref = "/devis",
   secondaryLabel = "Nous appeler",
   secondaryHref = "tel:+33676344468",
 }: CTAProps) {
+  const displayTitle = title.replace(/ \?$/, " ?")
+
   return (
     <section className="bg-section-alt py-16 md:py-20">
-      <div className="max-w-xl mx-auto px-6 md:px-8 text-center">
+      <div className="max-w-2xl mx-auto px-6 md:px-8 text-center">
         <h2 className="text-2xl md:text-3xl font-bold text-[#1e1e1e] mb-3">
-          {title}
+          {displayTitle}
         </h2>
         <p className="text-sm text-[#1e1e1e]/75 max-w-sm mx-auto mb-8">
           {subtitle}

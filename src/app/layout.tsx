@@ -5,7 +5,6 @@ import Script from "next/script";
 import "./globals.css";
 import Navbar from "@/components/Navbar"
 import Footer from "@/components/Footer";
-import ColorCustomizer from "@/components/ColorCustomizer";
 
 const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_ID;
 const CLARITY_PROJECT_ID = process.env.NEXT_PUBLIC_CLARITY_ID;
@@ -35,7 +34,6 @@ export default function RootLayout({
           <Navbar />
           <div className="flex flex-col flex-1">{children}</div>
           <Footer />
-          <ColorCustomizer />
         </body>
       {GA_MEASUREMENT_ID && <GoogleAnalytics gaId={GA_MEASUREMENT_ID} />}
       {CLARITY_PROJECT_ID && (

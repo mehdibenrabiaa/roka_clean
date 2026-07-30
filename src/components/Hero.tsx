@@ -9,10 +9,10 @@ const avatars = [
 
 export default function Hero() {
   return (
-    <section className="relative w-full min-h-[600px] md:min-h-[750px] flex items-center pb-28 md:pb-40">
+    <section className="relative w-full min-h-[600px] min-[1080px]:min-h-[750px] flex items-center pb-28 min-[1080px]:pb-40">
 
       {/* Mobile background image */}
-      <div className="md:hidden absolute inset-0 opacity-30">
+      <div className="min-[1080px]:hidden absolute inset-0 opacity-30">
         <Image
           src="/hero-bg-mobile.webp"
           alt=""
@@ -23,7 +23,7 @@ export default function Hero() {
       </div>
 
       {/* Desktop background image */}
-      <div className="hidden md:block absolute inset-0">
+      <div className="hidden min-[1080px]:block absolute inset-0">
         <Image
           src="/hero-bg-large.webp"
           alt=""
@@ -34,7 +34,7 @@ export default function Hero() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 w-full max-w-6xl mx-auto px-6 pt-32 md:pt-40 pb-6">
+      <div className="relative z-10 w-full max-w-6xl mx-auto px-6 pt-32 min-[1080px]:pt-40 pb-6">
         <div className="flex flex-col gap-6 max-w-lg">
 
         {/* Hours badge */}
@@ -46,12 +46,12 @@ export default function Hero() {
         </div>
 
         {/* Headline */}
-        <h1 className="text-4xl md:text-[52px] font-bold text-primary leading-tight">
+        <h1 className="text-4xl min-[1080px]:text-[52px] font-bold text-primary leading-tight">
           Services de Nettoyage pour Professionnels et Particuliers
         </h1>
 
         {/* Subtitle */}
-        <p className="text-base md:text-lg text-[#1e1e1e] max-w-md leading-relaxed">
+        <p className="text-base min-[1080px]:text-lg text-[#1e1e1e] max-w-md leading-relaxed">
           Des services de nettoyage fiables, conçus pour garder votre espace impeccable, frais et accueillant.
         </p>
 

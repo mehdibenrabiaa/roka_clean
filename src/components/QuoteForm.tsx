@@ -73,6 +73,7 @@ export default function QuoteForm() {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ service, timing: when, first_name: name, phone }),
+        signal: AbortSignal.timeout(15000),
       })
       if (!res.ok) throw new Error()
       setShowThanks(true)
@@ -88,12 +89,12 @@ export default function QuoteForm() {
   }
 
   return (
-    <div className="relative z-20 px-4 md:px-6 pb-8 md:pb-12 bg-section-alt">
-      <div className="max-w-5xl mx-auto bg-white rounded-2xl shadow-md overflow-hidden -translate-y-12 md:-translate-y-16">
-        <div className="px-5 md:px-10 pt-5 md:pt-7 pb-5 md:pb-6">
+    <div className="relative z-20 px-4 min-[1080px]:px-6 pb-8 min-[1080px]:pb-12 bg-section-alt">
+      <div className="max-w-5xl mx-auto bg-white rounded-2xl shadow-md overflow-hidden -translate-y-12 min-[1080px]:-translate-y-16">
+        <div className="px-5 min-[1080px]:px-10 pt-5 min-[1080px]:pt-7 pb-5 min-[1080px]:pb-6">
 
           <p className="text-xs font-bold uppercase tracking-widest text-[#1e1e1e]/70 mb-6">
-            Obtenez votre devis gratuit<span className="hidden md:inline"> —</span><br className="md:hidden" /> Rappel immédiat
+            Obtenez votre devis gratuit<span className="hidden min-[1080px]:inline"> —</span><br className="min-[1080px]:hidden" /> Rappel immédiat
           </p>
 
           <div className="grid grid-cols-1 lg:grid-cols-[1fr_1fr_1fr_1fr_auto] gap-3 items-end">
@@ -101,7 +102,7 @@ export default function QuoteForm() {
             <div className="flex flex-col gap-1.5">
               <Label className="text-[#1e1e1e]/70">Service</Label>
               <Select value={service} onValueChange={setService}>
-                <SelectTrigger aria-label="Service">
+                <SelectTrigger aria-label="Service" className="h-12 text-base min-[1080px]:h-11 min-[1080px]:text-sm">
                   <SelectValue placeholder="Choisir…" />
                 </SelectTrigger>
                 <SelectContent>
@@ -115,7 +116,7 @@ export default function QuoteForm() {
             <div className="flex flex-col gap-1.5">
               <Label className="text-[#1e1e1e]/70">Quand&nbsp;?</Label>
               <Select value={when} onValueChange={setWhen}>
-                <SelectTrigger aria-label="Quand">
+                <SelectTrigger aria-label="Quand" className="h-12 text-base min-[1080px]:h-11 min-[1080px]:text-sm">
                   <SelectValue placeholder="Choisir…" />
                 </SelectTrigger>
                 <SelectContent>
@@ -133,6 +134,7 @@ export default function QuoteForm() {
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 placeholder="Votre prénom"
+                className="h-12 text-base min-[1080px]:h-11 min-[1080px]:text-sm"
               />
             </div>
 
@@ -143,6 +145,7 @@ export default function QuoteForm() {
                 value={phone}
                 onChange={(e) => setPhone(e.target.value)}
                 placeholder="Votre numéro"
+                className="h-12 text-base min-[1080px]:h-11 min-[1080px]:text-sm"
               />
             </div>
 
@@ -151,7 +154,7 @@ export default function QuoteForm() {
               <Button
                 onClick={handleSubmit}
                 disabled={!isValid || submitting}
-                className="h-11 rounded-xl whitespace-nowrap font-bold flex items-center gap-2 disabled:opacity-40 disabled:cursor-not-allowed px-6"
+                className="h-12 text-base min-[1080px]:h-11 min-[1080px]:text-sm rounded-xl whitespace-nowrap font-bold flex items-center gap-2 disabled:opacity-40 disabled:cursor-not-allowed px-6"
               >
                 {submitting ? "Envoi…" : "Devis gratuit"}
                 <ChevronRight size={14} />

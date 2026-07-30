@@ -42,15 +42,15 @@ const faqs = [
 
 export default function FAQ() {
   return (
-    <section className="bg-white py-16 md:py-24">
-      <div className="max-w-3xl mx-auto px-6 md:px-8">
+    <section className="bg-white py-16 min-[1080px]:py-24">
+      <div className="max-w-3xl mx-auto px-6 min-[1080px]:px-8">
 
         {/* Header */}
         <div className="text-center mb-12">
-          <h2 className="text-2xl md:text-4xl font-bold text-[#1e1e1e] mb-4">
+          <h2 className="text-2xl min-[1080px]:text-4xl font-bold text-[#1e1e1e] mb-4">
             Questions Fréquentes
           </h2>
-          <p className="text-sm md:text-base text-[#1e1e1e]/70 max-w-md mx-auto">
+          <p className="text-sm min-[1080px]:text-base text-[#1e1e1e]/70 max-w-md mx-auto">
             Tout ce que vous devez savoir avant de réserver votre nettoyage.
           </p>
         </div>

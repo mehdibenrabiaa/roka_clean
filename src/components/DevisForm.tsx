@@ -109,6 +109,7 @@ export default function DevisForm() {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ type: jobType, category, service, timing: when, first_name: name, phone }),
+        signal: AbortSignal.timeout(15000),
       })
       if (!res.ok) throw new Error()
       setShowThanks(true)
@@ -126,17 +127,20 @@ export default function DevisForm() {
   }
 
   return (
-    <div className="bg-white rounded-2xl shadow-md p-6 md:p-8 w-full">
-      <p className="text-xs font-bold uppercase tracking-widest text-[#1e1e1e]/70 mb-6">
+    <div className="bg-white rounded-2xl shadow-md border border-[#DDE3E8] p-6 md:p-8 w-full">
+      <p className="text-sm text-[#5c6670] leading-relaxed mb-4">
+        Indiquez le type de prestation dont vous avez besoin, la catégorie associée, puis vos coordonnées : notre équipe vous envoie un tarif personnalisé sous 24h, sans engagement.
+      </p>
+      <p className="text-xs font-bold uppercase tracking-widest text-[#5c6670] mb-6">
         Vos coordonnées — Réponse sous 24h
       </p>
 
       <div className="flex flex-col gap-4">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div className="flex flex-col gap-1.5">
-            <Label className="text-[#1e1e1e]/70">Type de prestation</Label>
+            <Label className="text-[#5c6670]">Type de prestation</Label>
             <Select value={jobType} onValueChange={handleJobTypeChange}>
-              <SelectTrigger aria-label="Type de prestation" className="w-full">
+              <SelectTrigger aria-label="Type de prestation" className={`w-full ${jobType ? "border-primary" : ""}`}>
                 <SelectValue placeholder="Choisir…" />
               </SelectTrigger>
               <SelectContent>
@@ -148,9 +152,9 @@ export default function DevisForm() {
           </div>
 
           <div className="flex flex-col gap-1.5">
-            <Label className="text-[#1e1e1e]/70">Catégorie</Label>
+            <Label className="text-[#5c6670]">Catégorie</Label>
             <Select value={category} onValueChange={setCategory} disabled={!jobType}>
-              <SelectTrigger aria-label="Catégorie" className="w-full">
+              <SelectTrigger aria-label="Catégorie" className={`w-full ${category ? "border-primary" : ""}`}>
                 <SelectValue placeholder={jobType ? "Choisir…" : "Choisissez d'abord un type"} />
               </SelectTrigger>
               <SelectContent>
@@ -164,9 +168,9 @@ export default function DevisForm() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div className="flex flex-col gap-1.5">
-            <Label className="text-[#1e1e1e]/70">Service</Label>
+            <Label className="text-[#5c6670]">Service</Label>
             <Select value={service} onValueChange={setService}>
-              <SelectTrigger aria-label="Service" className="w-full">
+              <SelectTrigger aria-label="Service" className={`w-full ${service ? "border-primary" : ""}`}>
                 <SelectValue placeholder="Choisir…" />
               </SelectTrigger>
               <SelectContent>
@@ -178,9 +182,9 @@ export default function DevisForm() {
           </div>
 
           <div className="flex flex-col gap-1.5">
-            <Label className="text-[#1e1e1e]/70">Quand&nbsp;?</Label>
+            <Label className="text-[#5c6670]">Quand&nbsp;?</Label>
             <Select value={when} onValueChange={setWhen}>
-              <SelectTrigger aria-label="Quand" className="w-full">
+              <SelectTrigger aria-label="Quand" className={`w-full ${when ? "border-primary" : ""}`}>
                 <SelectValue placeholder="Choisir…" />
               </SelectTrigger>
               <SelectContent>
@@ -194,22 +198,24 @@ export default function DevisForm() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div className="flex flex-col gap-1.5">
-            <Label className="text-[#1e1e1e]/70">Prénom</Label>
+            <Label className="text-[#5c6670]">Prénom</Label>
             <Input
               type="text"
               value={name}
               onChange={(e) => setName(e.target.value)}
               placeholder="Votre prénom"
+              className={name ? "border-primary" : ""}
             />
           </div>
 
           <div className="flex flex-col gap-1.5">
-            <Label className="text-[#1e1e1e]/70">Téléphone</Label>
+            <Label className="text-[#5c6670]">Téléphone</Label>
             <Input
               type="tel"
               value={phone}
               onChange={(e) => setPhone(e.target.value)}
               placeholder="Votre numéro"
+              className={phone ? "border-primary" : ""}
             />
           </div>
         </div>
@@ -229,7 +235,7 @@ export default function DevisForm() {
           </p>
         )}
 
-        <p className="text-xs text-[#1e1e1e]/50 text-center">
+        <p className="text-xs text-[#5c6670] text-center">
           Sans engagement — vos informations ne sont utilisées que pour vous recontacter.
         </p>
       </div>
