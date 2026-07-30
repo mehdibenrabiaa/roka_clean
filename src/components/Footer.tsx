@@ -1,6 +1,9 @@
-﻿import Link from "next/link"
+﻿"use client"
+
+import Link from "next/link"
 import Image from "next/image"
 import { MapPin, Phone, Mail } from "lucide-react"
+import { trackContactClick } from "@/lib/analytics"
 
 const links = [
   {
@@ -63,10 +66,10 @@ const socials = [
   },
   {
     href: "#",
-    label: "X",
+    label: "TikTok",
     svg: (
       <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4">
-        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+        <path d="M16.6 5.82c-1.05-.98-1.65-2.35-1.65-3.82h-3.24v13.44c0 1.6-1.3 2.9-2.9 2.9s-2.9-1.3-2.9-2.9 1.3-2.9 2.9-2.9c.3 0 .59.05.86.13V9.4c-.28-.04-.57-.06-.86-.06-3.4 0-6.16 2.76-6.16 6.16s2.76 6.16 6.16 6.16 6.16-2.76 6.16-6.16V9.01c1.31.94 2.92 1.49 4.65 1.49V7.26c-.98 0-1.9-.28-2.68-.76a5.5 5.5 0 0 1-.34-.68z" />
       </svg>
     ),
   },
@@ -131,11 +134,19 @@ export default function Footer() {
               <MapPin size={14} className="text-primary shrink-0" />
               17 Rue Léon Blum, 94350 Villiers-sur-Marne
             </span>
-            <Link href="tel:+33676344468" className="flex items-center gap-2 hover:text-primary transition-colors">
+            <Link
+              href="tel:+33676344468"
+              onClick={() => trackContactClick("phone", "footer")}
+              className="flex items-center gap-2 hover:text-primary transition-colors"
+            >
               <Phone size={14} className="text-primary shrink-0" />
               +33 6 76 34 44 68
             </Link>
-            <Link href="mailto:contact@rokaclean.fr" className="flex items-center gap-2 hover:text-primary transition-colors">
+            <Link
+              href="mailto:contact@rokaclean.fr"
+              onClick={() => trackContactClick("email", "footer")}
+              className="flex items-center gap-2 hover:text-primary transition-colors"
+            >
               <Mail size={14} className="text-primary shrink-0" />
               contact@rokaclean.fr
             </Link>

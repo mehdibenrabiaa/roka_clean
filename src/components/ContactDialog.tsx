@@ -9,6 +9,7 @@ import {
   DialogTitle,
   DialogDescription,
 } from "@/components/ui/dialog"
+import { trackContactClick } from "@/lib/analytics"
 
 const PHONE_DISPLAY = "+33 6 76 34 44 68"
 const PHONE_TEL = "tel:+33676344468"
@@ -88,6 +89,7 @@ export default function ContactDialog({
         <div className="flex flex-col gap-3 mt-4">
           <Link
             href={PHONE_TEL}
+            onClick={() => trackContactClick("phone", "contact_dialog")}
             className="flex items-center gap-3 rounded-xl border border-[#DDE3E8] px-4 py-3 hover:border-primary hover:bg-primary/5 transition-colors"
           >
             <span className="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white shrink-0">
@@ -103,6 +105,7 @@ export default function ContactDialog({
             href={WHATSAPP_HREF}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => trackContactClick("whatsapp", "contact_dialog")}
             className="flex items-center gap-3 rounded-xl border border-[#DDE3E8] px-4 py-3 hover:border-[#25D366] hover:bg-[#25D366]/5 transition-colors"
           >
             <span className="w-10 h-10 rounded-full bg-[#25D366] flex items-center justify-center text-white shrink-0">
@@ -116,6 +119,7 @@ export default function ContactDialog({
 
           <Link
             href={`mailto:${EMAIL}`}
+            onClick={() => trackContactClick("email", "contact_dialog")}
             className="flex items-center gap-3 rounded-xl border border-[#DDE3E8] px-4 py-3 hover:border-primary hover:bg-primary/5 transition-colors"
           >
             <span className="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white shrink-0">

@@ -13,6 +13,7 @@ import {
 } from "@/components/ui/sheet"
 import { useEffect, useRef, useState } from "react"
 import ContactDialog from "@/components/ContactDialog"
+import { trackContactClick } from "@/lib/analytics"
 
 const navLinks = [
   { label: "Accueil", href: "/" },
@@ -84,7 +85,7 @@ export default function Navbar() {
         {/* Mobile — phone CTA + hamburger */}
         <div className="md:hidden flex items-center gap-2">
           <Button asChild className="rounded-full px-5 h-9 flex items-center gap-2" size="sm">
-            <Link href="tel:+33676344468">
+            <Link href="tel:+33676344468" onClick={() => trackContactClick("phone", "navbar_mobile")}>
               <Phone size={14} />
               <span className="text-sm font-semibold">Appeler</span>
             </Link>

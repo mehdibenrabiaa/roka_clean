@@ -1,6 +1,9 @@
+"use client"
+
 import Link from "next/link"
 import { Phone } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { trackContactClick } from "@/lib/analytics"
 
 type CTAProps = {
   title: string
@@ -35,7 +38,10 @@ export default function CTA({
             <Link href={primaryHref}>{primaryLabel}</Link>
           </Button>
           <Button asChild size="lg" variant="outline" className="rounded-full font-bold gap-2">
-            <Link href={secondaryHref}>
+            <Link
+              href={secondaryHref}
+              onClick={() => secondaryHref.startsWith("tel:") && trackContactClick("phone", "cta_section")}
+            >
               <Phone size={16} /> {secondaryLabel}
             </Link>
           </Button>

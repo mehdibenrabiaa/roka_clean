@@ -19,6 +19,7 @@ import {
   DialogTitle,
   DialogDescription,
 } from "@/components/ui/dialog"
+import { trackLead } from "@/lib/analytics"
 
 const serviceOptions = [
   "Professionnel",
@@ -76,6 +77,7 @@ export default function QuoteForm() {
         signal: AbortSignal.timeout(15000),
       })
       if (!res.ok) throw new Error()
+      trackLead("homepage_quote_form")
       setShowThanks(true)
       setService("")
       setWhen("")

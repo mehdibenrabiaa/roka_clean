@@ -20,6 +20,7 @@ import {
   DialogTitle,
   DialogDescription,
 } from "@/components/ui/dialog"
+import { trackLead } from "@/lib/analytics"
 
 const jobTypeOptions = ["Nettoyage", "Bricolage"]
 
@@ -112,6 +113,7 @@ export default function DevisForm() {
         signal: AbortSignal.timeout(15000),
       })
       if (!res.ok) throw new Error()
+      trackLead("devis_page")
       setShowThanks(true)
       setJobType("")
       setCategory("")
