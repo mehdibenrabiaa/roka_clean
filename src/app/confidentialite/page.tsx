@@ -115,7 +115,7 @@ export default function ConfidentialitePage() {
       {/* Header */}
       <section className="relative pt-36 pb-16 md:pt-40 md:pb-20 overflow-hidden">
         <div className="absolute inset-0">
-          <Image src="/confidentialite.webp" alt="" fill className="object-cover object-center" priority />
+          <Image src="/confidentialite.webp" alt="" fill className="object-cover object-center" preload fetchPriority="high" />
         </div>
         <div className="relative z-10 max-w-3xl mx-auto px-4 md:px-6 text-center">
           <span className="inline-block text-xs font-semibold text-white bg-white/20 rounded-full px-4 py-1.5 mb-4">

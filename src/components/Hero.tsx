@@ -18,7 +18,8 @@ export default function Hero() {
           alt=""
           fill
           className="object-cover object-left"
-          priority
+          preload
+          fetchPriority="high"
         />
       </div>
 
@@ -29,7 +30,8 @@ export default function Hero() {
           alt=""
           fill
           className="object-cover object-right"
-          priority
+          preload
+          fetchPriority="high"
         />
       </div>
 

@@ -55,7 +55,8 @@ export default function Navbar() {
             width={97}
             height={38}
             className="object-contain"
-            priority
+            preload
+            fetchPriority="high"
           />
         </Link>
 
